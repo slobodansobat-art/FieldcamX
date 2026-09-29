@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FieldCamX — Snimanje malog fudbala u halama | MI SNIMAMO SVE</title>
+  <meta name="description" content="FieldCamX snima amaterske utakmice malog fudbala fiksnim kamerama iznad terena i deli highlight-ove na Instagramu. Nema propuštenog gola." />
+  <link rel="canonical" href="https://fieldcamx.rs/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FieldCamX — MI SNIMAMO SVE" />
+  <meta property="og:description" content="Fiksne kamere iznad terena hvataju celu igru u malom fudbalu — vi samo igrate, mi snimamo sve. Highlight-ovi svake utakmice na Instagramu." />
+  <meta property="og:image" content="https://fieldcamx.rs/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://fieldcamx.rs/" />
+  <meta property="og:locale" content="sr_RS" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FieldCamX — MI SNIMAMO SVE" />
+  <meta name="twitter:description" content="Fiksne kamere iznad terena hvataju celu igru u malom fudbalu — vi samo igrate, mi snimamo sve." />
+  <meta name="twitter:image" content="https://fieldcamx.rs/images/og-image.png" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+
+  <!-- Google Fonts: Fredoka/Lilita One (naslovi), Manrope (tekst) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lilita+One&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVIGACIJA (sticky) ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="FieldCamX — početna">
+        <img class="logo-full" src="images/logo-full.png" width="114" height="36" alt="" />
+      </a>
+
+      <nav class="main-nav" aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="index.html" aria-current="page">Početna</a></li>
+          <li><a href="arhiva.html">Arhiva</a></li>
+          <li><a href="usluga.html">Usluga</a></li>
+          <li><a href="zakazivanje.html">Zakazivanje</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary btn-small" id="nav-cta" href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener">Prati nas</a>
+
+      <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Otvori meni">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Meni (mobilni)" hidden>
+      <ul>
+        <li><a href="index.html" aria-current="page">Početna</a></li>
+        <li><a href="arhiva.html">Arhiva</a></li>
+        <li><a href="usluga.html">Usluga</a></li>
+        <li><a href="zakazivanje.html">Zakazivanje</a></li>
+        <li><a href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener">Prati nas na Instagramu</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-label="Naslovna sekcija">
+      <!-- STOCK fotografija (Pexels, besplatna licenca) — privremena, zameniti pravim FieldCamX kadrom kad stigne -->
+      <img class="hero-bg" src="images/hero-bg.jpg" alt="Unutrašnjost sale za mali fudbal sa veštačkom travom" />
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <!-- Camera-HUD grid: sloj preko slike (ne deo fotografije), uvek sedi u uglovima ekrana -->
+      <div class="hero-hud" aria-hidden="true">
+        <span class="hud-line hud-line-v" style="left:33.333%"></span>
+        <span class="hud-line hud-line-v" style="left:66.666%"></span>
+        <span class="hud-line hud-line-h" style="top:33.333%"></span>
+        <span class="hud-line hud-line-h" style="top:66.666%"></span>
+        <span class="hud-corner hud-corner-tl"></span>
+        <span class="hud-corner hud-corner-tr"></span>
+        <span class="hud-corner hud-corner-bl"></span>
+        <span class="hud-corner hud-corner-br"></span>
+        <span class="hud-rec"><span class="hud-rec-dot"></span>REC</span>
+        <span class="hud-tag">CAM 01 — FIELDCAMX</span>
+      </div>
+      <div class="container hero-content">
+        <p class="hero-slogan">MI SNIMAMO SVE</p>
+        <h1 class="hero-title" data-field="naslov">Svaka utakmica, snimljena. Svaki gol, zapamćen.</h1>
+        <span class="accent-line" aria-hidden="true"></span>
+        <p class="hero-subtitle" data-field="podnaslov">Fiksne kamere iznad terena hvataju celu igru — vi samo igrate, mi snimamo sve.</p>
+        <a class="btn btn-primary" id="hero-cta" href="zakazivanje.html">Zakaži termin</a>
+      </div>
+    </section>
+
+    <!-- ============ KAKO RADI ============ -->
+    <section class="section" id="kako-radi" aria-labelledby="kako-radi-title">
+      <div class="container">
+        <h2 class="section-title" id="kako-radi-title">Kako radi</h2>
+        <span class="accent-line" aria-hidden="true"></span>
+        <p class="section-subtitle">Nema propuštenog gola. Nema izgovora.</p>
+
+        <div class="cards-grid cards-grid-3">
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32"><rect x="4" y="10" width="18" height="13" rx="3" fill="none" stroke="var(--accent)" stroke-width="2.5"/><path d="M22 14 L28 10 V22 L22 18Z" fill="var(--accent)"/></svg>
+            </span>
+            <h3>Kamera iznad terena</h3>
+            <p>Fiksne kamere hvataju ceo teren, bez kamermana — igra se snima sama.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="var(--accent)" stroke-width="2.5"/><path d="M16 8v8l6 4" stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Cela utakmica, snimljena</h3>
+            <p>Snimak od početka do kraja, bez propuštenih akcija.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="6" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle cx="16" cy="16" r="5.5" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle cx="23" cy="9" r="1.5" fill="var(--accent)"/></svg>
+            </span>
+            <h3>Highlight na Instagramu</h3>
+            <p>Najbolji trenici stižu direktno na naš profil.</p>
+          </article>
+        </div>
+
+        <p class="kako-radi-more">
+          <a class="btn btn-secondary btn-small" href="usluga.html">Saznaj više</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ POSLEDNJI SNIMCI (teaser) ============ -->
+    <section class="section section-alt" id="primeri" aria-labelledby="primeri-title">
+      <div class="container">
+        <h2 class="section-title" id="primeri-title">Pogledaj kako izgleda</h2>
+        <span class="accent-line" aria-hidden="true"></span>
+        <p class="section-subtitle">Poslednji snimljeni termini — klikni i pusti direktno ovde.</p>
+
+        <div class="matches-teaser-grid" id="matches-teaser-home" data-matches-teaser data-limit="3" aria-label="Poslednji snimci (izbor)">
+          <!-- Popunjava JS iz data/matches.json (3 najnovija termina) -->
+        </div>
+
+        <p class="matches-more">
+          <a class="btn btn-secondary" href="arhiva.html">Pogledaj celu arhivu</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FINALNI CTA ============ -->
+    <section class="section kontakt" id="cta" aria-labelledby="cta-title">
+      <div class="container kontakt-inner">
+        <h2 class="section-title" id="cta-title">Hoćeš da tvoja sledeća utakmica bude snimljena?</h2>
+        <span class="accent-line accent-line-center" aria-hidden="true"></span>
+        <p class="section-subtitle">Javi nam se, dogovorimo termin za tvoju halu.</p>
+
+        <div class="kontakt-actions">
+          <a class="btn btn-primary" href="zakazivanje.html">Zakaži termin</a>
+          <a class="btn btn-secondary" href="usluga.html">Saznaj više o usluzi</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo logo-footer" aria-label="FieldCamX — početna">
+        <img class="logo-full" src="images/logo-full.png" width="88" height="28" alt="" />
+      </a>
+
+      <div class="footer-socials">
+        <a class="footer-ig" href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener" aria-label="FieldCamX na Instagramu">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="var(--text-primary)" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="var(--text-primary)" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="var(--text-primary)"/></svg>
+        </a>
+        <a class="footer-yt" id="footer-yt-link" href="https://www.youtube.com/@FieldCam_X" target="_blank" rel="noopener" aria-label="FieldCamX na YouTube-u">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="none" stroke="var(--text-primary)" stroke-width="1.8"/><path d="M10 9.2v5.6l5-2.8-5-2.8z" fill="var(--text-primary)"/></svg>
+        </a>
+      </div>
+
+      <p class="footer-copy">© <span id="footer-year">2026</span> FieldCamX. Sva prava zadržana.</p>
+    </div>
+  </footer>
+
+  <!-- ============ VIDEO LIGHTBOX (YouTube plejer) ============ -->
+  <div class="lightbox" id="video-lightbox" hidden>
+    <div class="lightbox-backdrop" data-lightbox-close aria-hidden="true"></div>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Video plejer">
+      <button class="lightbox-close" data-lightbox-close aria-label="Zatvori">&times;</button>
+      <div class="lightbox-frame" id="lightbox-frame"></div>
+      <a class="lightbox-yt-link" id="lightbox-yt-link" href="#" target="_blank" rel="noopener">Otvori na YouTube</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

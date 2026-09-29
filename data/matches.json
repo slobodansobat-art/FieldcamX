@@ -1,0 +1,113 @@
+{
+  "_napomena": "PLACEHOLDER: youtube_id je isti test ID za sve stavke (javno, sigurno za embed). Vlasnik treba da zameni pravim ID-jevima nelistiranih (unlisted) YouTube snimaka pre lansiranja.",
+  "stavke": [
+    {
+      "balon": "Naša prva hala",
+      "datum": "2026-09-25",
+      "vreme": "20:00",
+      "tim1": "Sokolovi",
+      "tim2": "Vatreni",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša prva hala",
+      "datum": "2026-09-18",
+      "vreme": "19:00",
+      "tim1": "Orlovi",
+      "tim2": "Drugari",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša prva hala",
+      "datum": "2026-09-11",
+      "vreme": "21:00",
+      "tim1": "Šampioni",
+      "tim2": "Ekipa Nikole",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša prva hala",
+      "datum": "2026-09-04",
+      "vreme": "20:00",
+      "tim1": "Vatreni",
+      "tim2": "Drugari",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša prva hala",
+      "datum": "2026-08-28",
+      "vreme": "19:30",
+      "tim1": "Sokolovi",
+      "tim2": "Šampioni",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša prva hala",
+      "datum": "2026-08-21",
+      "vreme": "20:00",
+      "tim1": "Ekipa Nikole",
+      "tim2": "Orlovi",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša druga hala",
+      "datum": "2026-09-24",
+      "vreme": "20:30",
+      "tim1": "Zemun Boys",
+      "tim2": "Rivali",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša druga hala",
+      "datum": "2026-09-17",
+      "vreme": "19:30",
+      "tim1": "Sokolovi",
+      "tim2": "Orlovi",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša druga hala",
+      "datum": "2026-09-10",
+      "vreme": "20:00",
+      "tim1": "Drugari",
+      "tim2": "Šampioni",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša treća hala",
+      "datum": "2026-09-23",
+      "vreme": "21:00",
+      "tim1": "Ekipa Nikole",
+      "tim2": "Zemun Boys",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša treća hala",
+      "datum": "2026-09-16",
+      "vreme": "20:00",
+      "tim1": "Rivali",
+      "tim2": "Vatreni",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    },
+    {
+      "balon": "Naša treća hala",
+      "datum": "2026-09-09",
+      "vreme": "19:00",
+      "tim1": "Orlovi",
+      "tim2": "Šampioni",
+      "youtube_id": "dQw4w9WgXcQ",
+      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+    }
+  ]
+}

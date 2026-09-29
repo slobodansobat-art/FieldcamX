@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zakazivanje — FieldCamX | Proveri termine i zakaži snimanje</title>
+  <meta name="description" content="Proveri slobodne termine za snimanje svoje utakmice malog fudbala bez poziva, i javi se FieldCamX-u da rezervišeš. Instagram, telefon, email i lista hala gde snimamo." />
+  <link rel="canonical" href="https://fieldcamx.rs/zakazivanje.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zakazivanje — FieldCamX" />
+  <meta property="og:description" content="Proveri slobodne termine bez poziva i dogovori snimanje svoje utakmice malog fudbala." />
+  <meta property="og:image" content="https://fieldcamx.rs/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://fieldcamx.rs/zakazivanje.html" />
+  <meta property="og:locale" content="sr_RS" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zakazivanje — FieldCamX" />
+  <meta name="twitter:description" content="Proveri slobodne termine bez poziva i dogovori snimanje svoje utakmice malog fudbala." />
+  <meta name="twitter:image" content="https://fieldcamx.rs/images/og-image.png" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lilita+One&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVIGACIJA (sticky) ============ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="FieldCamX — početna">
+        <img class="logo-full" src="images/logo-full.png" width="114" height="36" alt="" />
+      </a>
+
+      <nav class="main-nav" aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="arhiva.html">Arhiva</a></li>
+          <li><a href="usluga.html">Usluga</a></li>
+          <li><a href="zakazivanje.html" aria-current="page">Zakazivanje</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary btn-small" id="nav-cta" href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener">Prati nas</a>
+
+      <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Otvori meni">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Meni (mobilni)" hidden>
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="arhiva.html">Arhiva</a></li>
+        <li><a href="usluga.html">Usluga</a></li>
+        <li><a href="zakazivanje.html" aria-current="page">Zakazivanje</a></li>
+        <li><a href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener">Prati nas na Instagramu</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ KALENDAR TERMINA ============ -->
+    <section class="section" id="kalendar" aria-labelledby="kalendar-title">
+      <div class="container">
+        <h1 class="section-title" id="kalendar-title">Slobodni termini</h1>
+        <span class="accent-line" aria-hidden="true"></span>
+        <p class="section-subtitle">Proveri termine za naredna tri dana, bez poziva — ažurira se čim se termin zauzme.</p>
+
+        <div class="dani-agenda" id="kalendar-agenda" aria-live="polite">
+          <!-- Popunjava JS iz data/kalendar.json: danas + naredna 2 dana -->
+        </div>
+
+        <p class="kalendar-legenda">
+          <span class="legenda-stavka"><span class="legenda-tacka legenda-slobodno" aria-hidden="true"></span>Slobodno</span>
+          <span class="legenda-stavka"><span class="legenda-tacka legenda-zauzeto" aria-hidden="true"></span>Zauzeto</span>
+        </p>
+
+        <p class="kalendar-mesec-wrap">
+          <button type="button" class="btn btn-secondary" id="kalendar-month-toggle" aria-expanded="false" aria-controls="kalendar-month">Prikaži ceo mesec</button>
+        </p>
+        <div class="kalendar-mesec" id="kalendar-month" hidden>
+          <!-- Popunjava JS: mesečna mreža termina -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAKT / CTA ============ -->
+    <section class="section section-alt" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="container">
+        <div class="kontakt-card">
+          <h2 class="section-title" id="kontakt-title">Rezerviši svoj termin</h2>
+          <span class="accent-line accent-line-center" aria-hidden="true"></span>
+          <p class="section-subtitle">Javi nam se sa terminom koji ti odgovara i dogovorimo halu.</p>
+
+          <div class="kontakt-actions">
+            <a class="btn btn-primary" id="kontakt-cta-primary" href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener">Pošalji poruku</a>
+            <a class="btn btn-secondary" id="kontakt-cta-secondary" href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener">Zakaži termin</a>
+          </div>
+
+          <div class="kontakt-info-grid">
+            <a class="kontakt-info-item" id="kontakt-instagram-item" href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener">
+              <span class="kontakt-info-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="var(--accent)" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="var(--accent)" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="var(--accent)"/></svg>
+              </span>
+              <span class="kontakt-info-text">
+                <span class="kontakt-info-label">Instagram</span>
+                <span class="kontakt-info-value" id="kontakt-instagram-handle">@fieldcam_x</span>
+              </span>
+            </a>
+
+            <a class="kontakt-info-item" id="kontakt-phone-item" href="tel:">
+              <span class="kontakt-info-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span class="kontakt-info-text">
+                <span class="kontakt-info-label">Telefon</span>
+                <span class="kontakt-info-value" id="kontakt-phone-value">—</span>
+              </span>
+            </a>
+
+            <a class="kontakt-info-item" id="kontakt-email-item" href="mailto:">
+              <span class="kontakt-info-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              </span>
+              <span class="kontakt-info-text">
+                <span class="kontakt-info-label">Email</span>
+                <span class="kontakt-info-value" id="kontakt-email-value">—</span>
+              </span>
+            </a>
+          </div>
+
+          <p class="kontakt-radno-vreme" id="kontakt-radno-vreme" hidden></p>
+
+          <div class="hale-list-wrap">
+            <h3 class="hale-list-title">Snimamo u:</h3>
+            <ul class="hale-list" id="hale-list" aria-label="Hale gde snimamo">
+              <!-- Popunjava JS iz data/venues.json -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo logo-footer" aria-label="FieldCamX — početna">
+        <img class="logo-full" src="images/logo-full.png" width="88" height="28" alt="" />
+      </a>
+
+      <div class="footer-socials">
+        <a class="footer-ig" href="https://www.instagram.com/fieldcam_x/" target="_blank" rel="noopener" aria-label="FieldCamX na Instagramu">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="var(--text-primary)" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="var(--text-primary)" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="var(--text-primary)"/></svg>
+        </a>
+        <a class="footer-yt" id="footer-yt-link" href="https://www.youtube.com/@FieldCam_X" target="_blank" rel="noopener" aria-label="FieldCamX na YouTube-u">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="none" stroke="var(--text-primary)" stroke-width="1.8"/><path d="M10 9.2v5.6l5-2.8-5-2.8z" fill="var(--text-primary)"/></svg>
+        </a>
+      </div>
+
+      <p class="footer-copy">© <span id="footer-year">2026</span> FieldCamX. Sva prava zadržana.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Napomena: git-gateway je standardni Decap+Netlify setup.
+# Netlify Identity + Git Gateway se podešavaju u sledećoj fazi (deploy),
+# ovde je samo konfiguracija kolekcija za sadržaj sajta.
+
+publish_mode: simple
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "sr"
+
+collections:
+  - name: "hero"
+    label: "Hero sekcija"
+    files:
+      - file: "data/hero.json"
+        label: "Hero tekst"
+        name: "hero"
+        fields:
+          - { label: "Naslov", name: "naslov", widget: "string" }
+          - { label: "Podnaslov", name: "podnaslov", widget: "text" }
+          - { label: "Tekst CTA dugmeta", name: "cta_tekst", widget: "string" }
+          - { label: "Link CTA dugmeta", name: "cta_link", widget: "string" }
+
+  - name: "termini"
+    label: "Arhiva termina (snimci)"
+    files:
+      - file: "data/matches.json"
+        label: "Termini"
+        name: "matches"
+        fields:
+          - label: "Termini"
+            name: "stavke"
+            widget: "list"
+            label_singular: "Termin"
+            summary: "{{fields.balon}} — {{fields.tim1}} vs {{fields.tim2}} ({{fields.datum}})"
+            fields:
+              - { label: "Balon / hala (mora se poklapati sa nazivom iz 'Lista hala' ispod)", name: "balon", widget: "string" }
+              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Vreme (opciono, npr. '20:00')", name: "vreme", widget: "string", required: false }
+              - { label: "Tim 1", name: "tim1", widget: "string" }
+              - { label: "Tim 2", name: "tim2", widget: "string" }
+              - { label: "Naslov (opciono, override umesto 'Tim 1 – Tim 2')", name: "naslov", widget: "string", required: false }
+              - { label: "YouTube ID snimka (nelistiran/unlisted video — samo ID, npr. 'dQw4w9WgXcQ')", name: "youtube_id", widget: "string" }
+              - { label: "YouTube link (opciono, ako se razlikuje od standardnog youtu.be/ID)", name: "youtube_link", widget: "string", required: false }
+
+  - name: "kalendar"
+    label: "Kalendar termina (Zakazivanje)"
+    files:
+      - file: "data/kalendar.json"
+        label: "Kalendar termina"
+        name: "kalendar"
+        fields:
+          - label: "Termini u danu (fiksni, isti raspored svaki dan — npr. '18:00')"
+            name: "sati"
+            widget: "list"
+            label_singular: "Termin"
+          - label: "Dani sa zauzetim terminima"
+            name: "dani"
+            widget: "list"
+            label_singular: "Dan"
+            summary: "{{fields.datum}}"
+            fields:
+              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - label: "Zauzeti termini (moraju se poklapati sa vremenima iz 'Termini u danu' iznad, npr. '18:00')"
+                name: "zauzeti"
+                widget: "list"
+                label_singular: "Zauzet termin"
+
+  - name: "kontakt"
+    label: "Kontakt podaci"
+    files:
+      - file: "data/contact.json"
+        label: "Kontakt podaci"
+        name: "contact"
+        fields:
+          - { label: "Telefon", name: "telefon", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "Instagram handle (prikaz, npr. @fieldcam_x)", name: "instagram_handle", widget: "string" }
+          - { label: "Instagram link", name: "instagram_link", widget: "string" }
+          - { label: "YouTube link", name: "youtube_link", widget: "string", required: false }
+          - { label: "Radno vreme (opciono)", name: "radno_vreme", widget: "string", required: false }
+
+  - name: "hale"
+    label: "Lista hala / lokacija"
+    files:
+      - file: "data/venues.json"
+        label: "Lista hala"
+        name: "venues"
+        fields:
+          - label: "Hale"
+            name: "stavke"
+            widget: "list"
+            label_singular: "Hala"
+            summary: "{{fields.naziv}}"
+            fields:
+              - { label: "Naziv hale", name: "naziv", widget: "string" }
+              - { label: "Adresa (opciono)", name: "adresa", widget: "string", required: false }
+
+  - name: "cta"
+    label: "CTA linkovi"
+    files:
+      - file: "data/cta-links.json"
+        label: "CTA linkovi"
+        name: "cta-links"
+        fields:
+          - { label: "Instagram DM link", name: "instagram_dm", widget: "string", required: false }
+          - { label: "WhatsApp link", name: "whatsapp", widget: "string", required: false }
+          - { label: "Telefon link (format: tel:+381...)", name: "telefon", widget: "string", required: false }

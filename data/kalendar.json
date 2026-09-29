@@ -1,0 +1,15 @@
+{
+  "_napomena": "PLACEHOLDER: primeri termina radi demonstracije izgleda kalendara. Vlasnik treba da ažurira 'dani' sa stvarnim zauzetim terminima (format datuma: GGGG-MM-DD, vreme mora tačno da se poklapa sa jednim od unosa u 'sati').",
+  "sati": ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],
+  "dani": [
+    { "datum": "2026-09-15", "zauzeti": ["19:00", "20:00"] },
+    { "datum": "2026-09-20", "zauzeti": ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"] },
+    { "datum": "2026-09-25", "zauzeti": [] },
+    { "datum": "2026-09-28", "zauzeti": ["18:00", "20:00"] },
+    { "datum": "2026-09-29", "zauzeti": ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"] },
+    { "datum": "2026-09-30", "zauzeti": [] },
+    { "datum": "2026-10-02", "zauzeti": ["19:00"] },
+    { "datum": "2026-10-05", "zauzeti": ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"] },
+    { "datum": "2026-10-09", "zauzeti": [] }
+  ]
+}
