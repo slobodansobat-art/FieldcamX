@@ -64,7 +64,16 @@ python3 -m http.server 8000
 
 Zatim otvoriti `http://localhost:8000/` u browseru.
 
-CMS admin panel (bez git-gateway login-a, samo za pregled interfejsa) je na `http://localhost:8000/admin/` — realan login zahteva Netlify Identity + Git Gateway podešen u fazi deploy-a.
+CMS admin panel na lokalu (bez pravog login-a, samo za pregled interfejsa) je na `http://localhost:8000/admin/`. Pravi login radi samo na živom sajtu (`https://fieldcamx.netlify.app/admin/`), jer zahteva Netlify Identity + Git Gateway.
+
+---
+
+## Deploy i hosting
+
+- **Netlify projekat:** `fieldcamx` (tim **Fieldcamx**, nalog `dropmytoy@gmail.com`) — https://fieldcamx.netlify.app/
+- **Git repo:** https://github.com/slobodansobat-art/FieldcamX (grana `main`) — vlasnik repo-a je nalog `slobodansobat-art`, dok je Netlify projekat na drugom (`dropmytoy`) nalogu; to je normalno, Netlify se autorizovao ka GitHub-u preko sopstvenog OAuth toka nezavisno od toga ko je ulogovan na Netlify.
+- **Continuous deployment:** aktivan — svaki `git push` na `main` automatski pokreće novi deploy na Netlify-ju (nema build koraka, čist statički sajt, publish directory je koren repoa).
+- Da bi se sadržaj sajta menjao ubuduće: napraviti izmenu lokalno → `git add` / `git commit` / `git push origin main` → Netlify sam deploy-uje za par desetina sekundi. Stariji način (ručni upload zip-a preko "Netlify Drop") više nije potreban.
 
 ---
 
@@ -73,7 +82,8 @@ CMS admin panel (bez git-gateway login-a, samo za pregled interfejsa) je na `htt
 - Backend: `git-gateway` (standardni Decap + Netlify setup) — definisan u `admin/config.yml`.
 - Kolekcije mapirane 1:1 na `data/*.json` fajlove: **Hero sekcija**, **Arhiva termina (snimci)**, **Kalendar termina (Zakazivanje)**, **Kontakt podaci**, **Lista hala/lokacija**, **CTA linkovi**.
 - Slike koje vlasnik otpremi preko CMS-a idu u `images/uploads/`.
-- Netlify Identity/Git Gateway login **nije testiran** (to je sledeća faza — deploy). Konfiguracija je standardna i spremna za povezivanje.
+- ✅ **Netlify Identity + Git Gateway su omogućeni i testirani** na živom sajtu (`https://fieldcamx.netlify.app/admin/`) — login formular se ispravno učitava.
+- Vlasnik (`slobodansobat@gmail.com`) je pozvan kao prvi CMS korisnik — treba da proveri email za invite link, podesi lozinku, i onda se loguje na `/admin/` da menja sadržaj bez pomoći programera.
 
 ---
 
