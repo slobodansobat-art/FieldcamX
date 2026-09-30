@@ -1,16 +1,16 @@
 {
   "stavke": [
     {
-      "naziv": "Naša prva hala",
-      "adresa": "Beograd"
+      "naziv": "Altina"
     },
     {
-      "naziv": "Naša druga hala",
-      "adresa": "Zemun"
+      "naziv": "SC7"
     },
     {
-      "naziv": "Naša treća hala",
-      "adresa": "Novi Beograd"
+      "naziv": "Stracatella"
+    },
+    {
+      "naziv": "Crveno Crno"
     }
   ]
 }

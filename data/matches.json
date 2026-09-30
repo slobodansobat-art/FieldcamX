@@ -1,9 +1,9 @@
 {
-  "_napomena": "Termini uvezeni sa YouTube kanala @FieldCam_X (skinuti hajlajt klipovi i van-formatni sadrzaj). 8 termina bez jasnog naziva hale je pod balon=\"Ostalo\" (turniri/posebni snimci) — proveriti i po potrebi ispraviti kroz CMS. Datumi kod tih Ostalo stavki (Pastazi Liga, FK Zemun Polje, Crveno Crno) su procenjeni iz redosleda na kanalu, ne iz tacnog datuma u naslovu.",
+  "_napomena": "Termini uvezeni sa YouTube kanala @FieldCam_X (skinuti hajlajt klipovi i van-formatni sadrzaj). 7 termina bez jasnog naziva hale je pod balon=\"Ostalo\" (turniri Pastazi Liga, FK Zemun Polje - FK Petlic) — proveriti i po potrebi ispraviti kroz CMS. Njihovi datumi su procenjeni iz redosleda na kanalu, ne iz tacnog datuma u naslovu.",
   "stavke": [
     {
       "balon": "SC7",
-      "datum": "2026-09-25",
+      "datum": "2026-09-14",
       "vreme": "20:00",
       "tim1": "Baranda - Crni",
       "tim2": "Baranda - Beli",
@@ -11,10 +11,11 @@
       "youtube_link": "https://www.youtube.com/watch?v=kZVhthtWYRs&t=3869s"
     },
     {
-      "balon": "Ostalo",
+      "balon": "Crveno Crno",
       "datum": "2026-09-23",
       "vreme": "19:00",
-      "naslov": "Crveno Crno",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
       "youtube_id": "MKeleDpSmAY"
     },
     {
