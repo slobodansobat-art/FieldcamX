@@ -1,5 +1,5 @@
 {
-  "_napomena": "PLACEHOLDER: youtube_id je isti test ID za sve stavke (javno, sigurno za embed). Vlasnik treba da zameni pravim ID-jevima nelistiranih (unlisted) YouTube snimaka pre lansiranja.",
+  "_napomena": "Termini uvezeni sa YouTube kanala @FieldCam_X (skinuti hajlajt klipovi i van-formatni sadrzaj). 8 termina bez jasnog naziva hale je pod balon=\"Ostalo\" (turniri/posebni snimci) — proveriti i po potrebi ispraviti kroz CMS. Datumi kod tih Ostalo stavki (Pastazi Liga, FK Zemun Polje, Crveno Crno) su procenjeni iz redosleda na kanalu, ne iz tacnog datuma u naslovu.",
   "stavke": [
     {
       "balon": "SC7",
@@ -7,107 +7,1048 @@
       "vreme": "20:00",
       "tim1": "Baranda - Crni",
       "tim2": "Baranda - Beli",
-      "youtube_id": "kZVhthtWYRs&t",
+      "youtube_id": "kZVhthtWYRs",
       "youtube_link": "https://www.youtube.com/watch?v=kZVhthtWYRs&t=3869s"
     },
     {
-      "balon": "Altina",
-      "datum": "2026-09-18",
-      "vreme": "19:00",
-      "tim1": "Orlovi",
-      "tim2": "Drugari",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša prva hala",
-      "datum": "2026-09-11",
-      "vreme": "21:00",
-      "tim1": "Šampioni",
-      "tim2": "Ekipa Nikole",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša prva hala",
-      "datum": "2026-09-04",
-      "vreme": "20:00",
-      "tim1": "Vatreni",
-      "tim2": "Drugari",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša prva hala",
-      "datum": "2026-08-28",
-      "vreme": "19:30",
-      "tim1": "Sokolovi",
-      "tim2": "Šampioni",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša prva hala",
-      "datum": "2026-08-21",
-      "vreme": "20:00",
-      "tim1": "Ekipa Nikole",
-      "tim2": "Orlovi",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša druga hala",
-      "datum": "2026-09-24",
-      "vreme": "20:30",
-      "tim1": "Zemun Boys",
-      "tim2": "Rivali",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša druga hala",
-      "datum": "2026-09-17",
-      "vreme": "19:30",
-      "tim1": "Sokolovi",
-      "tim2": "Orlovi",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša druga hala",
-      "datum": "2026-09-10",
-      "vreme": "20:00",
-      "tim1": "Drugari",
-      "tim2": "Šampioni",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša treća hala",
+      "balon": "Ostalo",
       "datum": "2026-09-23",
-      "vreme": "21:00",
-      "tim1": "Ekipa Nikole",
-      "tim2": "Zemun Boys",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša treća hala",
-      "datum": "2026-09-16",
-      "vreme": "20:00",
-      "tim1": "Rivali",
-      "tim2": "Vatreni",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
-    },
-    {
-      "balon": "Naša treća hala",
-      "datum": "2026-09-09",
       "vreme": "19:00",
-      "tim1": "Orlovi",
-      "tim2": "Šampioni",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+      "naslov": "Crveno Crno",
+      "youtube_id": "MKeleDpSmAY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-22",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "VdpInCzDkIo"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-09-21",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "GuDRTBCGKqM"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-19",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "WM-LheFOVmw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-15",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "2SCuABqS3Kw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-12",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "pCN1dFpXsqg"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2026-09-10",
+      "tim1": "FK Zemun Polje",
+      "tim2": "FK Petlic",
+      "naslov": "FK Zemun Polje – FK Petlic 6:0 (Pioniri)",
+      "youtube_id": "ksHp_p4F6QI"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-08",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "dRdEZ9kprds"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-07",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "0TXnrFnx34k"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-05",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "3BtrnlR9AL0"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-01",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "evwfClvz8eQ"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-08-31",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "-YtWIxDNADw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-08-25",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "DqlFWgsSYqU"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-08-24",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "iABen0X3zjY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-08-18",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "C1G6vlUp9_0"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-08-08",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "gqvPhSH8o3o"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-08-04",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "rhcTDUjHIgQ"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-08-04",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "94It0nMCn30"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-08-01",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "UJyCmmvKZ0w"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-07-28",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "gtw9uaQSfT0"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-07-28",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Nsz5x_OY7UM"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-07-27",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "u8Yx0QdycYo"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-07-25",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "XomiFwIzF1A"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-07-22",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "GiWVQm0Qg6Y"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-07-20",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "vmUBjXkCUlU"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-07-19",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "mQxB9eJkXUw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-07-17",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "qHIAaECUxMs"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-07-13",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "GhZ32IFH9is"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-07-07",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "ykwvpFi9IxQ"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-06-30",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "p0f6K1eGxtU"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-06-26",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "D0OQZijMIOI"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-06-22",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "zFGue9RVPTE"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-06-23",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "U2FppG5o65I"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2026-06-19",
+      "tim1": "Shanghai",
+      "tim2": "Busije",
+      "naslov": "Pastazi Liga – Treće mesto: Shanghai 6:1 Busije",
+      "youtube_id": "gEA2raYHgBo"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2026-06-20",
+      "tim1": "Krnjajic namestaj",
+      "tim2": "Transfer team plus",
+      "naslov": "Pastazi Liga – Finale: Krnjajic namestaj 6:2 Transfer team plus",
+      "youtube_id": "CZ8r7ZvUmM0"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-06-15",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "S9zGC3q5P1s"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-06-05",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "_sfLOixydzw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-06-02",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Hr2wwvuVsNE"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-06-01",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "9TiS0DjJfGQ"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-05-30",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "VOnPB0ElVns"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-05-29",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "i4s2NGCSA7M"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-05-26",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "HedM1mbujuI"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-05-25",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "-bZzSp0gUTY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-05-19",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "sEtg4rvw_4U"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-05-16",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "BIwlGydcP5o"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-05-12",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "PrKMntXGQ7Q"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-05-09",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "crpQeOw-hqA"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-05-04",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "nJmMsAAJ8gg"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-04-27",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "eY84_RQ799Q"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-04-25",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "gt9_sEvhuZ8"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-04-25",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "OnNbHyV2WHw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-04-21",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "DGUiQ5J0qrM"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-04-20",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Co139-OHFUk"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-04-18",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "5M4XyfsVAb4"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-04-14",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "U595zFIOuMQ"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-04-06",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "sP9op7NoLFM"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-04-04",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "-yF44D9ccVA"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-03-31",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "2LgCrczqL94"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-03-30",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "nd9L7UOd4JY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-03-24",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "nZvMV_tWfX0"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-03-23",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "uF7GDIQZFO8"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-03-17",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "6Pd256apc9Q"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-03-16",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "QZgaGuqZF2o"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-03-10",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "eR4J0W84PzI"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-03-09",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "vp5TDIc4DpE"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-03-07",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "KvwVqCexfRA"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-02-23",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "cTGbKIwPg6s"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-02-24",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "BIDuep_L5Do"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-02-23",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "CubGnVzDlWY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-02-21",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "HPokvyX2_3Q"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-02-20",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "kRqbwY3rKpc"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-02-17",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "sJufhWwkB7g"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-02-16",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "5sdmdLefrBo"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-02-10",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "2dMtEsqfn4o"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-02-09",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "NXSMe4WcjMY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-02-03",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "rwY9uSKJ17g"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-02-02",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "OiPNYKiZm1A"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-02-01",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "cHszbWppRww"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-01-27",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "aCvZiUldjqo"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-01-26",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Gi8qrFXVZpg"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-01-19",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "iC-ceP5MOyo"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-01-17",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "UX9XWvcQ8LI"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-01-12",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "u9S8-c6ThFo"
+    },
+    {
+      "balon": "Stracatella",
+      "datum": "2026-01-10",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "GpoW7sN0e5Q"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-01-05",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Cr_ZMqDL0K0"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-12-30",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "F1k5YIU8wE0"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-12-16",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "5wEgEkKf6dQ"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-12-16",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "rPOAfN_M7-w"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-12-09",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "BPNgHiLKslw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-12-09",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "OGTT4JNG17k"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-29",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "66oseu_BYGc"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-25",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "nFPu0YXGo8M"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-25",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "f3_0orAh-C8"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-11-24",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "XfWu_agBsy8"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-22",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "175kdWhFoPI"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-22",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "jxmewvdKhPg"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-18",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "jgoD9PO6jpE"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-18",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "cZKpAv1qsNY"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-11-17",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "AJtpz2TPREs"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-15",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "r-jHvPrlD0c"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-11",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "1lm9C-nWUSM"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-11-10",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Pq8rUcVRxsY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-04",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "ZvR4duYJ9os"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-11-01",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "aXTLIvkd0Wk"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-10-28",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "JOuQlO_psZs"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-10-27",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "kgM2hIAJJMM"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2025-10-24",
+      "tim1": "Shanghai Shenhua",
+      "tim2": "NB Home Investment",
+      "naslov": "Pastazi Liga – Treće mesto: Shanghai Shenhua – NB Home Investment",
+      "youtube_id": "G5e25pAS93s"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2025-10-24",
+      "tim1": "Pizzeria Madene",
+      "tim2": "Busije",
+      "naslov": "Pastazi Liga – Finale: Pizzeria Madene – Busije",
+      "youtube_id": "eCe81IlQ5CE"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2025-10-22",
+      "tim1": "Shanghai Shenhua",
+      "tim2": "Busije",
+      "naslov": "Pastazi Liga – Polufinale: Shanghai Shenhua – Busije",
+      "youtube_id": "Rh281lMO520"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2025-10-22",
+      "tim1": "NB Home Investment",
+      "tim2": "Pizzeria Madene",
+      "naslov": "Pastazi Liga – Polufinale: NB Home Investment – Pizzeria Madene",
+      "youtube_id": "1NixjvuywdU"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-10-21",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "USCNfR0r3lc"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-10-20",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "qrL6YAgQWnA"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-10-18",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "iLe2dVgoN6o"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-10-14",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "G-uMmQ10MyY"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-10-13",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "lOUonwrGLGY"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-10-07",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "uPUPVvqn2ns"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-10-06",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "icLQ-IeJHaM"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-09-30",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "mLRMceYXF1c"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-09-29",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "VGsDbZIcyDo"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-09-26",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "zH2ZQxYye-4"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-09-23",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "s0DCnjjsKDM"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-09-22",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Bw3Bp4lH4eM"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-09-16",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "PMcQfVkYIP4"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-09-15",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "1qBPn_xIyk8"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-09-08",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "y-X0UgfF9eE"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-09-02",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "NT2YA_qFjio"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-09-01",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "upYBAFVdbCQ"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-08-29",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "46hAbso1JlQ"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2025-08-26",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "AF-Ujbn1_iA"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-08-25",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "WQSjmZfNc5k"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2025-08-18",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "K4tI0o10LTQ"
     }
   ]
 }
