@@ -2,16 +2,16 @@
   "_napomena": "PLACEHOLDER: youtube_id je isti test ID za sve stavke (javno, sigurno za embed). Vlasnik treba da zameni pravim ID-jevima nelistiranih (unlisted) YouTube snimaka pre lansiranja.",
   "stavke": [
     {
-      "balon": "Naša prva hala",
+      "balon": "SC7",
       "datum": "2026-09-25",
       "vreme": "20:00",
-      "tim1": "Sokolovi",
-      "tim2": "Vatreni",
-      "youtube_id": "dQw4w9WgXcQ",
-      "youtube_link": "https://youtu.be/dQw4w9WgXcQ"
+      "tim1": "Baranda - Crni",
+      "tim2": "Baranda - Beli",
+      "youtube_id": "kZVhthtWYRs&t",
+      "youtube_link": "https://www.youtube.com/watch?v=kZVhthtWYRs&t=3869s"
     },
     {
-      "balon": "Naša prva hala",
+      "balon": "Altina",
       "datum": "2026-09-18",
       "vreme": "19:00",
       "tim1": "Orlovi",
