@@ -4,32 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FieldCamX — Snimanje malog fudbala u halama | MI SNIMAMO SVE</title>
-  <meta name="description" content="FieldCamX snima amaterske utakmice malog fudbala fiksnim kamerama iznad terena i deli highlight-ove na Instagramu. Nema propuštenog gola." />
-  <link rel="canonical" href="https://fieldcamx.rs/" />
+  <meta name="description" content="FieldCamX snima tvoju utakmicu malog fudbala fiksnom kamerom iznad terena, od prvog do poslednjeg minuta, i kači najbolje trenutke na Instagram." />
+  <link rel="canonical" href="https://fieldcamx.netlify.app/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="FieldCamX — MI SNIMAMO SVE" />
-  <meta property="og:description" content="Fiksne kamere iznad terena hvataju celu igru u malom fudbalu — vi samo igrate, mi snimamo sve. Highlight-ovi svake utakmice na Instagramu." />
-  <meta property="og:image" content="https://fieldcamx.rs/images/og-image.png" />
+  <meta property="og:description" content="Fiksna kamera iznad terena snima celu utakmicu malog fudbala, od početka do kraja — ti igraš, mi snimamo. Highlightovi idu na Instagram." />
+  <meta property="og:image" content="https://fieldcamx.netlify.app/images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://fieldcamx.rs/" />
+  <meta property="og:url" content="https://fieldcamx.netlify.app/" />
   <meta property="og:locale" content="sr_RS" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="FieldCamX — MI SNIMAMO SVE" />
-  <meta name="twitter:description" content="Fiksne kamere iznad terena hvataju celu igru u malom fudbalu — vi samo igrate, mi snimamo sve." />
-  <meta name="twitter:image" content="https://fieldcamx.rs/images/og-image.png" />
+  <meta name="twitter:description" content="Fiksna kamera iznad terena snima celu utakmicu malog fudbala, od početka do kraja — ti igraš, mi snimamo." />
+  <meta name="twitter:image" content="https://fieldcamx.netlify.app/images/og-image.png" />
 
+  <link rel="icon" href="images/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link rel="apple-touch-icon" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
-  <!-- Google Fonts: Fredoka/Lilita One (naslovi), Manrope (tekst) -->
+  <!-- Google Fonts: Fredoka (naslovi), Manrope (tekst) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lilita+One&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Structured data: pomaže Google-u da razume da je ovo lokalni biznis usluge -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FieldCamX",
+    "description": "Snimanje amaterskih utakmica malog fudbala fiksnim kamerama u halama, sa distribucijom highlight-ova na Instagramu.",
+    "url": "https://fieldcamx.netlify.app/",
+    "logo": "https://fieldcamx.netlify.app/images/logo-full.png",
+    "image": "https://fieldcamx.netlify.app/images/og-image.png",
+    "areaServed": {
+      "@type": "City",
+      "name": "Beograd"
+    },
+    "sameAs": [
+      "https://www.instagram.com/fieldcam_x/",
+      "https://www.youtube.com/@FieldCam_X"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -37,7 +59,7 @@
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo" aria-label="FieldCamX — početna">
-        <img class="logo-full" src="images/logo-full.png" width="114" height="36" alt="" />
+        <img class="logo-full" src="images/logo-full.png" width="114" height="36" alt="FieldCamX" />
       </a>
 
       <nav class="main-nav" aria-label="Glavna navigacija">
@@ -89,9 +111,9 @@
       </div>
       <div class="container hero-content">
         <p class="hero-slogan">MI SNIMAMO SVE</p>
-        <h1 class="hero-title" data-field="naslov">Svaka utakmica, snimljena. Svaki gol, zapamćen.</h1>
+        <h1 class="hero-title" data-field="naslov">Taj gol u sudijskoj nadoknadi? Ovog puta ga imaš na snimku.</h1>
         <span class="accent-line" aria-hidden="true"></span>
-        <p class="hero-subtitle" data-field="podnaslov">Fiksne kamere iznad terena hvataju celu igru — vi samo igrate, mi snimamo sve.</p>
+        <p class="hero-subtitle" data-field="podnaslov">Kamera stoji fiksno iznad terena i snima celu utakmicu, od prvog zvižduka do poslednjeg — bez kamermana i bez praznina. Ti igraš, mi se pobrinemo za ostalo.</p>
         <a class="btn btn-primary" id="hero-cta" href="zakazivanje.html">Zakaži termin</a>
       </div>
     </section>
@@ -101,31 +123,31 @@
       <div class="container">
         <h2 class="section-title" id="kako-radi-title">Kako radi</h2>
         <span class="accent-line" aria-hidden="true"></span>
-        <p class="section-subtitle">Nema propuštenog gola. Nema izgovora.</p>
+        <p class="section-subtitle">Bez kamermana. Bez praznina u snimku. Bez „jesi me snimio gol?“ posle utakmice.</p>
 
         <div class="cards-grid cards-grid-3">
           <article class="card">
             <span class="card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 32 32"><rect x="4" y="10" width="18" height="13" rx="3" fill="none" stroke="var(--accent)" stroke-width="2.5"/><path d="M22 14 L28 10 V22 L22 18Z" fill="var(--accent)"/></svg>
             </span>
-            <h3>Kamera iznad terena</h3>
-            <p>Fiksne kamere hvataju ceo teren, bez kamermana — igra se snima sama.</p>
+            <h3>Kamera gleda ceo teren</h3>
+            <p>Postavljena je fiksno iznad terena i hvata svaki ugao — nema kamermana koji trči za loptom i propusti pola akcije.</p>
           </article>
 
           <article class="card">
             <span class="card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="var(--accent)" stroke-width="2.5"/><path d="M16 8v8l6 4" stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
             </span>
-            <h3>Cela utakmica, snimljena</h3>
-            <p>Snimak od početka do kraja, bez propuštenih akcija.</p>
+            <h3>Ništa ne fali</h3>
+            <p>Snimamo od prvog zvižduka do poslednjeg — cela utakmica, u jednom komadu, bez isečaka i rupa.</p>
           </article>
 
           <article class="card">
             <span class="card-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22" rx="6" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle cx="16" cy="16" r="5.5" fill="none" stroke="var(--accent)" stroke-width="2.5"/><circle cx="23" cy="9" r="1.5" fill="var(--accent)"/></svg>
             </span>
-            <h3>Highlight na Instagramu</h3>
-            <p>Najbolji trenici stižu direktno na naš profil.</p>
+            <h3>Najbolje ide na Instagram</h3>
+            <p>Golove, parade i akcije biramo mi i kačimo na naš profil — samo se otkači i podeli dalje.</p>
           </article>
         </div>
 
@@ -138,9 +160,9 @@
     <!-- ============ POSLEDNJI SNIMCI (teaser) ============ -->
     <section class="section section-alt" id="primeri" aria-labelledby="primeri-title">
       <div class="container">
-        <h2 class="section-title" id="primeri-title">Pogledaj kako izgleda</h2>
+        <h2 class="section-title" id="primeri-title">Ovako to izgleda kad te snimimo</h2>
         <span class="accent-line" aria-hidden="true"></span>
-        <p class="section-subtitle">Poslednji snimljeni termini — klikni i pusti direktno ovde.</p>
+        <p class="section-subtitle">Poslednji odigrani termini — klikni na klip i pusti ga odmah, bez odlaska na YouTube.</p>
 
         <div class="matches-teaser-grid" id="matches-teaser-home" data-matches-teaser data-limit="3" aria-label="Poslednji snimci (izbor)">
           <!-- Popunjava JS iz data/matches.json (3 najnovija termina) -->
@@ -155,9 +177,9 @@
     <!-- ============ FINALNI CTA ============ -->
     <section class="section kontakt" id="cta" aria-labelledby="cta-title">
       <div class="container kontakt-inner">
-        <h2 class="section-title" id="cta-title">Hoćeš da tvoja sledeća utakmica bude snimljena?</h2>
+        <h2 class="section-title" id="cta-title">Sledeći meč ti je na redu.</h2>
         <span class="accent-line accent-line-center" aria-hidden="true"></span>
-        <p class="section-subtitle">Javi nam se, dogovorimo termin za tvoju halu.</p>
+        <p class="section-subtitle">Reci nam kad i gde igrate — termin dogovorimo za par minuta, bez frke.</p>
 
         <div class="kontakt-actions">
           <a class="btn btn-primary" href="zakazivanje.html">Zakaži termin</a>
@@ -172,7 +194,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <a href="index.html" class="logo logo-footer" aria-label="FieldCamX — početna">
-        <img class="logo-full" src="images/logo-full.png" width="88" height="28" alt="" />
+        <img class="logo-full" src="images/logo-full.png" width="88" height="28" alt="FieldCamX" />
       </a>
 
       <div class="footer-socials">

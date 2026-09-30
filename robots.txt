@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://fieldcamx.rs/sitemap.xml
+Sitemap: https://fieldcamx.netlify.app/sitemap.xml

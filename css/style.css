@@ -23,7 +23,7 @@
 
   /* Tipografija */
   --font-heading: "Fredoka", sans-serif;
-  --font-hero: "Lilita One", "Fredoka", sans-serif;
+  --font-hero: "Fredoka", sans-serif;
   --font-body: "Manrope", sans-serif;
 
   /* Layout */
@@ -199,9 +199,20 @@ h1, h2, h3 {
 .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.28s ease, opacity 0.2s ease;
 }
+.mobile-nav.is-open { max-height: 480px; opacity: 1; }
 .mobile-nav ul { padding: 8px 20px 20px; display: flex; flex-direction: column; gap: 4px; }
 .mobile-nav a {
   display: block;
@@ -308,6 +319,7 @@ h1, h2, h3 {
 }
 .hero-title {
   font-family: var(--font-hero);
+  font-weight: 700;
   font-size: 32px;
   color: var(--text-primary);
   text-transform: none;

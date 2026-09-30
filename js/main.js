@@ -37,17 +37,35 @@
     const nav = document.getElementById("mobile-nav");
     if (!btn || !nav) return;
 
+    const openNav = () => {
+      nav.hidden = false;
+      // force reflow so the transition to .is-open actually animates
+      void nav.offsetHeight;
+      nav.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+    };
+    const closeNav = () => {
+      nav.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      window.setTimeout(() => {
+        if (!nav.classList.contains("is-open")) nav.hidden = true;
+      }, 300);
+    };
+
     btn.addEventListener("click", () => {
       const isOpen = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!isOpen));
-      nav.hidden = isOpen;
+      if (isOpen) closeNav();
+      else openNav();
     });
 
     nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        btn.setAttribute("aria-expanded", "false");
-        nav.hidden = true;
-      });
+      link.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (btn.getAttribute("aria-expanded") === "true" && !nav.contains(e.target) && !btn.contains(e.target)) {
+        closeNav();
+      }
     });
   }
 
