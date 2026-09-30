@@ -39,7 +39,7 @@ collections:
             summary: "{{fields.balon}} — {{fields.tim1}} vs {{fields.tim2}} ({{fields.datum}})"
             fields:
               - { label: "Balon / hala (mora se poklapati sa nazivom iz 'Lista hala' ispod)", name: "balon", widget: "string" }
-              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Datum", name: "datum", widget: "datetime", format: "YYYY-MM-DD", date_format: true, time_format: false, picker_utc: true }
               - { label: "Vreme (opciono, npr. '20:00')", name: "vreme", widget: "string", required: false }
               - { label: "Tim 1", name: "tim1", widget: "string" }
               - { label: "Tim 2", name: "tim2", widget: "string" }
@@ -64,7 +64,7 @@ collections:
             label_singular: "Dan"
             summary: "{{fields.datum}}"
             fields:
-              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Datum", name: "datum", widget: "datetime", format: "YYYY-MM-DD", date_format: true, time_format: false, picker_utc: true }
               - label: "Zauzeti termini (moraju se poklapati sa vremenima iz 'Termini u danu' iznad, npr. '18:00')"
                 name: "zauzeti"
                 widget: "list"
