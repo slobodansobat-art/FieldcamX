@@ -1,5 +1,5 @@
 {
-  "_napomena": "Termini uvezeni sa YouTube kanala @FieldCam_X (skinuti hajlajt klipovi i van-formatni sadrzaj). 7 termina bez jasnog naziva hale je pod balon=\"Ostalo\" (turniri Pastazi Liga, FK Zemun Polje - FK Petlic) — proveriti i po potrebi ispraviti kroz CMS. Njihovi datumi su procenjeni iz redosleda na kanalu, ne iz tacnog datuma u naslovu.",
+  "_napomena": "Termini uvezeni sa YouTube kanala @FieldCam_X. Turniri i snimci van stalnih hala su pod balon=\"Ostalo\". Polje 'golovi' (opciono) je lista minuta golova u formatu mm:ss, prikazuje se u plejeru na sajtu.",
   "stavke": [
     {
       "balon": "SC7",
@@ -62,8 +62,8 @@
       "balon": "Ostalo",
       "datum": "2026-09-10",
       "tim1": "FK Zemun Polje",
-      "tim2": "FK Petlic",
-      "naslov": "FK Zemun Polje – FK Petlic 6:0 (Pioniri)",
+      "tim2": "FK Petlić",
+      "naslov": "FK Zemun Polje – FK Petlić 6:0 (Pioniri)",
       "youtube_id": "ksHp_p4F6QI"
     },
     {
@@ -273,15 +273,15 @@
       "datum": "2026-06-19",
       "tim1": "Shanghai",
       "tim2": "Busije",
-      "naslov": "Pastazi Liga – Treće mesto: Shanghai 6:1 Busije",
+      "naslov": "Pastazi liga – treće mesto: Shanghai 6:1 Busije",
       "youtube_id": "gEA2raYHgBo"
     },
     {
       "balon": "Ostalo",
       "datum": "2026-06-20",
-      "tim1": "Krnjajic namestaj",
+      "tim1": "Krnjajić nameštaj",
       "tim2": "Transfer team plus",
-      "naslov": "Pastazi Liga – Finale: Krnjajic namestaj 6:2 Transfer team plus",
+      "naslov": "Pastazi liga – finale: Krnjajić nameštaj 6:2 Transfer team plus",
       "youtube_id": "CZ8r7ZvUmM0"
     },
     {
@@ -547,14 +547,6 @@
       "tim1": "Domaći",
       "tim2": "Gosti",
       "youtube_id": "BIDuep_L5Do"
-    },
-    {
-      "balon": "SC7",
-      "datum": "2026-02-23",
-      "vreme": "20:00",
-      "tim1": "Domaći",
-      "tim2": "Gosti",
-      "youtube_id": "CubGnVzDlWY"
     },
     {
       "balon": "Altina",
@@ -856,7 +848,7 @@
       "datum": "2025-10-24",
       "tim1": "Shanghai Shenhua",
       "tim2": "NB Home Investment",
-      "naslov": "Pastazi Liga – Treće mesto: Shanghai Shenhua – NB Home Investment",
+      "naslov": "Pastazi liga – treće mesto: Shanghai Shenhua – NB Home Investment",
       "youtube_id": "G5e25pAS93s"
     },
     {
@@ -864,7 +856,7 @@
       "datum": "2025-10-24",
       "tim1": "Pizzeria Madene",
       "tim2": "Busije",
-      "naslov": "Pastazi Liga – Finale: Pizzeria Madene – Busije",
+      "naslov": "Pastazi liga – finale: Pizzeria Madene – Busije",
       "youtube_id": "eCe81IlQ5CE"
     },
     {
@@ -872,7 +864,7 @@
       "datum": "2025-10-22",
       "tim1": "Shanghai Shenhua",
       "tim2": "Busije",
-      "naslov": "Pastazi Liga – Polufinale: Shanghai Shenhua – Busije",
+      "naslov": "Pastazi liga – polufinale: Shanghai Shenhua – Busije",
       "youtube_id": "Rh281lMO520"
     },
     {
@@ -880,7 +872,7 @@
       "datum": "2025-10-22",
       "tim1": "NB Home Investment",
       "tim2": "Pizzeria Madene",
-      "naslov": "Pastazi Liga – Polufinale: NB Home Investment – Pizzeria Madene",
+      "naslov": "Pastazi liga – polufinale: NB Home Investment – Pizzeria Madene",
       "youtube_id": "1NixjvuywdU"
     },
     {

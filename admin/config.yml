@@ -46,6 +46,11 @@ collections:
               - { label: "Naslov (opciono, override umesto 'Tim 1 – Tim 2')", name: "naslov", widget: "string", required: false }
               - { label: "YouTube ID snimka (nelistiran/unlisted video — samo ID, npr. 'dQw4w9WgXcQ')", name: "youtube_id", widget: "string" }
               - { label: "YouTube link (opciono, ako se razlikuje od standardnog youtu.be/ID)", name: "youtube_link", widget: "string", required: false }
+              - label: "Golovi (opciono): minut svakog gola u snimku, format mm:ss, npr. '41:05'"
+                name: "golovi"
+                widget: "list"
+                required: false
+                label_singular: "Gol"
 
   - name: "kalendar"
     label: "Kalendar termina (Zakazivanje)"
@@ -54,7 +59,7 @@ collections:
         label: "Kalendar termina"
         name: "kalendar"
         fields:
-          - label: "Termini u danu (fiksni, isti raspored svaki dan — npr. '18:00')"
+          - label: "Termini u danu (fiksni, isti raspored svaki dan, npr. '18:00'). Sajt prikazuje sve kao slobodno osim dana upisanih ispod."
             name: "sati"
             widget: "list"
             label_singular: "Termin"
