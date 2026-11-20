@@ -1,6 +1,166 @@
 {
-  "_napomena": "Termini uvezeni sa YouTube kanala @FieldCam_X. Turniri i snimci van stalnih hala su pod balon=\"Ostalo\". Polje 'golovi' (opciono) je lista minuta golova u formatu mm:ss, prikazuje se u plejeru na sajtu.",
+  "_napomena": "Termini uvezeni sa YouTube kanala @FieldCam_X (bez Highlights klipova). Turniri i snimci van stalnih hala su pod balon=\"Ostalo\"; datumi turnira su datumi objave na kanalu. Polje 'golovi' (opciono) je lista minuta golova u formatu mm:ss, prikazuje se u plejeru na sajtu.",
   "stavke": [
+    {
+      "balon": "Altina",
+      "datum": "2026-11-17",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "A1PV-ZXr-7E"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-11-14",
+      "vreme": "18:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "DYLf93xHf7Q"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-11-09",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Ko-LILvmyyU"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2026-11-09",
+      "tim1": "Mister Burger",
+      "tim2": "ICT Box",
+      "naslov": "Pastazi liga – treće mesto: Mister Burger 3:4 ICT Box",
+      "youtube_id": "JqUZ0PgBKAo"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2026-11-09",
+      "tim1": "Shanghai Shenhua",
+      "tim2": "Transfer Team",
+      "naslov": "Pastazi liga – finale: Shanghai Shenhua 3:2 Transfer Team",
+      "youtube_id": "rweYCSfAows"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2026-11-08",
+      "tim1": "Shanghai Shenhua",
+      "tim2": "Mister Burger",
+      "naslov": "Pastazi liga – polufinale: Shanghai Shenhua 3:3 Mister Burger",
+      "youtube_id": "4EKs3FDzxZ0"
+    },
+    {
+      "balon": "Ostalo",
+      "datum": "2026-11-08",
+      "tim1": "Transfer Team",
+      "tim2": "ICT Box",
+      "naslov": "Pastazi liga – polufinale: Transfer Team 3:3 ICT Box",
+      "youtube_id": "qMuEQ2L28fg"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-11-03",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Rg9_YEgs3Js"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-11-02",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "Ytso-V3NihM"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-10-31",
+      "vreme": "19:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "6A1NpgD0VCQ"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-10-27",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "7ZLho3WaPXI"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-10-26",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "VKIO0RxrAdw"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-10-20",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "DNO4koB3Kx4"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-10-19",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "q3kYIeXaj90"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-10-13",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "LbEnw-JHelQ"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-10-12",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "RABLCfRVM_8"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-10-06",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "p9vpQTaj-_E"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-10-05",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "JMhUrug0iNM"
+    },
+    {
+      "balon": "Altina",
+      "datum": "2026-09-29",
+      "vreme": "21:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "5NCOwYxNilM"
+    },
+    {
+      "balon": "SC7",
+      "datum": "2026-09-28",
+      "vreme": "20:00",
+      "tim1": "Domaći",
+      "tim2": "Gosti",
+      "youtube_id": "_KgWABF5Wtc"
+    },
     {
       "balon": "SC7",
       "datum": "2026-09-14",
