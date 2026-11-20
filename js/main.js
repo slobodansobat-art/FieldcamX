@@ -486,10 +486,11 @@
       daysEl.innerHTML = [1, 2, 3].map(function (k) {
         var d = new Date(t.getFullYear(), t.getMonth(), t.getDate() + k);
         var full = fullDay(d);
+        var b0 = dayBusy(d), reallyFull = hours.every(function (h) { return b0.indexOf(h) !== -1; });
         return '<div style="flex: 1 1 280px; min-width: 0; background: #12302A; border: 1px solid #24463C; border-top: 3px solid #D7FF00; border-radius: 18px; padding: 20px">' +
           '<h3 style="margin: 0 0 2px; font-family: \'Baloo 2\', sans-serif; font-weight: 700; font-size: 22px">' + cap(WD[d.getDay()]) + '</h3>' +
           '<p style="margin: 0 0 16px; font-size: 14px; color: #A9BDB4">' + d.getDate() + '. ' + MN[d.getMonth()] + '</p>' +
-          (full ? '<p style="margin: 0; padding: 16px; border: 1px dashed #4F8070; border-radius: 12px; color: #C9D6CF; font-size: 15px">Ceo dan je zauzet. Pogledaj drugi dan.</p>'
+          (full ? '<p style="margin: 0; padding: 16px; border: 1px dashed #4F8070; border-radius: 12px; color: #C9D6CF; font-size: 15px">' + (reallyFull ? 'Ceo dan je zauzet. Pogledaj drugi dan.' : 'Za ovaj dan je kasno, termin se zakazuje najkasnije 24 sata unapred.') + '</p>'
                 : '<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">' + hours.map(function (h) { return slot(d, h); }).join('') + '</ul>') +
           '</div>';
       }).join('');
@@ -512,7 +513,7 @@
         var stt = nBusy === 0 ? 'f' : nBusy >= hours.length ? 'b' : 'p';
         var bookable = !past && !isToday && stt !== 'b';
         var sel = st.calDay === iso(d);
-        var sr = ', ' + WD[d.getDay()] + ' ' + n + '. ' + MN[mm] + (past ? ', prošlo' : isToday ? ', danas' : stt === 'f' ? ', slobodno ceo dan' : stt === 'p' ? ', ima slobodnih termina' : ', zauzeto');
+        var sr = ', ' + WD[d.getDay()] + ' ' + n + '. ' + MN[mm] + (past ? ', prošlo' : isToday ? ', danas' : stt === 'f' ? ', slobodno ceo dan' : stt === 'p' ? ', ima slobodnih termina' : (b.length >= hours.length ? ', zauzeto' : ', kasno za zakazivanje'));
         var base = 'width: 100%; min-height: 44px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 15px; font-family: Manrope, sans-serif; color: #F5F7F3; padding: 0; ';
         var num = 'font-weight: 700; ' + (sel ? 'color: #0F2620;' : past ? 'color: #7F978D;' : stt === 'b' ? 'color: #93AAA0; text-decoration: line-through;' : 'color: #F5F7F3;');
         if (bookable) {
@@ -604,7 +605,12 @@
           var ok = false; try { ok = document.execCommand('copy'); } catch (er) {}
           ta.remove(); return ok;
         };
-        var done = function (ok) { t.textContent = ok ? 'Kopirano, otvaram Instagram' : 'Otvaram Instagram, prepiši poruku odozgo'; };
+        var done = function (ok) {
+          if (ok) { t.textContent = 'Kopirano, otvaram Instagram'; return; }
+          bar.classList.add('show-msg');
+          t.textContent = 'Kopiranje nije uspelo, prepiši poruku iznad';
+          t.focus();
+        };
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(msg).then(function () { done(true); }, function () { done(fallback()); });
         } else done(fallback());

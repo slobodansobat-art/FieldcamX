@@ -20,5 +20,6 @@ Otvori https://fieldcamx.netlify.app/admin/ i prijavi se. Svaka izmena se čuva 
 - **Hero sekcija**: naslov, podnaslov i dugme na početnoj.
 
 ## Napomene
+- Podaci za Google (JSON-LD u `index.html`: telefon, radno vreme, Instagram/YouTube) se ne menjaju kroz CMS. Ako se promeni broj ili radno vreme, to treba izmeniti i tamo.
 - Pozivnice za /admin/ stižu mejlom (Netlify Identity). Link iz mejla otvara sajt, koji zatim vodi na /admin/.
 - Snimci starog sajta (pre redizajna) su na grani `stari-sajt-snimci`.

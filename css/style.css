@@ -53,7 +53,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #D7FF00;outline-offset:3p
 .fx-scrub{display:none !important}
 }
 @media(max-width:760px){.fx-snimak{display:none !important}}
-@media(max-height:500px) and (orientation:landscape){.fx-hero{aspect-ratio:auto !important;min-height:0 !important;height:calc(100svh - 64px)}.fx-snimak,.fx-sub,.fx-scrub{display:none !important}.fx-h1{font-size:28px !important}.fx-copy{gap:10px !important}}
+@media(max-height:500px) and (orientation:landscape){.fx-hero{aspect-ratio:auto !important;min-height:0 !important;height:calc(100svh - 67px)}.fx-snimak,.fx-sub,.fx-scrub{display:none !important}.fx-h1{font-size:28px !important}.fx-copy{gap:10px !important}}
 .tick-box:hover .tick,.tick-box:focus-within .tick,.tick.paused{animation-play-state:paused}
 .tick-a:hover span.th{color:#D7FF00 !important}
 @media(prefers-reduced-motion:reduce){.fx-replay{display:none !important}}
@@ -99,9 +99,10 @@ summary:hover .faq-i{border-color:#F5F7F3}
 @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.recdot,.pop{animation:none !important}}
 /* ---- dodato u kodu ---- */
+.pickbar.show-msg .pick-prev{display:block !important}
 #player>div{max-width:min(960px,calc((100svh - 150px) * 16 / 9)) !important}
 .nav-a{display:inline-block;padding:10px 0}
 .hdr-in>a:first-child{min-height:44px}
-@media(max-height:500px) and (orientation:landscape){.fx-pitch{width:min(100%,calc((100svh - 64px) * 1020 / 560)) !important}}
+@media(max-height:500px) and (orientation:landscape){.fx-pitch{width:min(100%,calc((100svh - 67px) * 1020 / 560)) !important}}
 .pl-play:hover{transform:scale(1.06)}
 #pl-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}

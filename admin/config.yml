@@ -65,6 +65,7 @@ collections:
             name: "sati"
             widget: "list"
             label_singular: "Termin"
+            field: { label: "Vreme (HH:MM)", name: "vreme", widget: "string", pattern: ['^([01]?[0-9]|2[0-3]):[0-5][0-9]$', "Upiši vreme kao 18:00"] }
           - label: "Dani sa zauzetim terminima"
             name: "dani"
             widget: "list"
@@ -76,6 +77,7 @@ collections:
                 name: "zauzeti"
                 widget: "list"
                 label_singular: "Zauzet termin"
+                field: { label: "Vreme (HH:MM)", name: "vreme", widget: "string", pattern: ['^([01]?[0-9]|2[0-3]):[0-5][0-9]$', "Upiši vreme kao 18:00"] }
 
   - name: "kontakt"
     label: "Kontakt podaci"
