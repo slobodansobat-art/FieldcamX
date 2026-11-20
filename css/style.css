@@ -99,6 +99,8 @@ summary:hover .faq-i{border-color:#F5F7F3}
 @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.recdot,.pop{animation:none !important}}
 /* ---- dodato u kodu ---- */
+.soc-a{width:48px;height:48px;border-radius:50%;border:2px solid rgba(245,247,243,0.35);color:#F5F7F3;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color .2s,color .2s}
+.soc-a:hover{border-color:#D7FF00;color:#D7FF00}
 .pickbar.show-msg .pick-prev{display:block !important}
 #player>div{max-width:min(960px,calc((100svh - 150px) * 16 / 9)) !important}
 .nav-a{display:inline-block;padding:10px 0}

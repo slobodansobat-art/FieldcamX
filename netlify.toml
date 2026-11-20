@@ -1,0 +1,10 @@
+# Sajt je običan statički HTML. Netlify-jeva naknadna obrada HTML-a (pretty URLs)
+# je menjala atribute i lomila stilove dugmića, pa je isključena.
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = true
+
+[build.processing.html]
+  pretty_urls = false

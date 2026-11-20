@@ -83,6 +83,12 @@
     else if (d.charAt(0) === '0') d = '381' + d.slice(1);
     return d;
   }
+  // Menja broj/nalog u tekstu linka; kod ikonica (bez teksta) menja aria-label i title.
+  function swapText(a, re, val) {
+    if (a.querySelector('svg') && !a.textContent.trim()) {
+      ['aria-label', 'title'].forEach(function (k) { var v = a.getAttribute(k); if (v) a.setAttribute(k, v.replace(re, val)); });
+    } else a.textContent = a.textContent.replace(re, val);
+  }
   function initContacts() {
     Promise.all([loadJSON('data/contact.json'), loadJSON('data/cta-links.json')]).then(function (r) {
       var c = r[0] || {}, l = r[1] || {};
@@ -90,29 +96,30 @@
       var intl = phoneIntl(c.telefon);
       $$('a[href^="tel:"]').forEach(function (a) {
         if (intl) a.href = 'tel:+' + intl;
-        if (c.telefon) a.textContent = a.textContent.replace(phoneRe, c.telefon);
+        if (c.telefon) swapText(a, phoneRe, c.telefon);
       });
       $$('a[href^="https://wa.me/"]').forEach(function (a) {
         if (a.id === 'wa-send') return;
         if (intl) a.href = 'https://wa.me/' + intl;
-        if (c.telefon) a.textContent = a.textContent.replace(phoneRe, c.telefon);
+        if (c.telefon) swapText(a, phoneRe, c.telefon);
       });
-      if (l.instagram_dm) $$('a[href^="https://ig.me/"]').forEach(function (a) { a.href = l.instagram_dm; });
-      if (c.instagram_link) $$('a.f-link[href^="https://www.instagram.com/"]').forEach(function (a) {
+      if (l.instagram_dm) $$('a[data-ig-dm]').forEach(function (a) { a.href = l.instagram_dm; });
+      if (c.instagram_link) $$('a.f-link[href^="https://www.instagram.com/"], a.soc-a[href^="https://www.instagram.com/"]').forEach(function (a) {
+        if (a.hasAttribute('data-ig-dm')) return;
         a.href = c.instagram_link;
-        if (c.instagram_handle) a.textContent = a.textContent.replace(/@[\w.]+/, c.instagram_handle);
+        if (c.instagram_handle) swapText(a, /@[\w.]+/, c.instagram_handle);
       });
-      if (c.youtube_link) $$('a.f-link[href^="https://www.youtube.com/@"]').forEach(function (a) {
+      if (c.youtube_link) $$('a.f-link[href^="https://www.youtube.com/@"], a.soc-a[href^="https://www.youtube.com/@"]').forEach(function (a) {
         if (a.id === 'pl-yt') return;
         a.href = c.youtube_link;
         var h = (c.youtube_link.match(/@[\w.-]+/) || [])[0];
-        if (h) a.textContent = a.textContent.replace(/@[\w.-]+/, h);
+        if (h) swapText(a, /@[\w.-]+/, h);
       });
       if (c.radno_vreme) $$('[data-c="radno_vreme"]').forEach(function (el) { el.textContent = c.radno_vreme; });
       if (c.email) $$('a[href^="mailto:"]').forEach(function (a) {
         var old = a.getAttribute('href').slice(7);
         a.href = 'mailto:' + c.email;
-        a.textContent = a.textContent.replace(old, c.email);
+        swapText(a, old, c.email);
       });
     });
   }
@@ -455,7 +462,7 @@
     var daysEl = $('#days'), monthEl = $('#month'), monthBtn = $('#month-btn'), weeklyBtn = $('#weekly'), bar = $('#pickbar');
     var st = { pick: null, hala: null, weekly: false, month: false, mon: 0, calDay: null };
     var hours = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'], busy = {}, halls = ['Altina', 'SC7', 'Stracatella', 'Crveno Crno'];
-    var waBase = 'https://wa.me/38161324423', igDm = 'https://ig.me/m/fieldcam_x';
+    var waBase = 'https://wa.me/38161324423', igDm = 'https://www.instagram.com/fieldcam_x/';
     var DAY = 24 * 3600 * 1000;
     var chipStyle = function (on) { return "display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 999px; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 17px; cursor: pointer; " + (on ? 'background: #D7FF00; color: #0F2620; border: 2px solid #D7FF00;' : 'background: transparent; color: #F5F7F3; border: 2px solid #5E8F7F;'); };
     var today = function () { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); };

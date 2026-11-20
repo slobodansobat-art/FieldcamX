@@ -116,5 +116,5 @@ collections:
         label: "CTA linkovi"
         name: "cta-links"
         fields:
-          - { label: "Instagram DM link", name: "instagram_dm", widget: "string", required: false, hint: "Link koji otvara poruke na Instagramu, npr. https://ig.me/m/fieldcam_x. Telefon i WhatsApp se menjaju u 'Kontakt podaci'." }
+          - { label: "Instagram DM link", name: "instagram_dm", widget: "string", required: false, hint: "Link za dugmad 'Piši na Instagramu', npr. https://www.instagram.com/fieldcam_x/ (ig.me linkovi znaju da ne rade na računaru). Telefon i WhatsApp se menjaju u 'Kontakt podaci'." }
 
