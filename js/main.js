@@ -89,7 +89,18 @@
       ['aria-label', 'title'].forEach(function (k) { var v = a.getAttribute(k); if (v) a.setAttribute(k, v.replace(re, val)); });
     } else a.textContent = a.textContent.replace(re, val);
   }
+  // Na telefonu ig.me/m/<nalog> otvara Instagram aplikaciju pravo u porukama.
+  // Na računaru taj link često ne radi, pa tamo vodimo na profil (dugme "Message").
+  var IS_MOBILE = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  function igDmUrl(handle) { return 'https://ig.me/m/' + encodeURIComponent(String(handle || '@fieldcam_x').trim().replace(/^@/, '')); }
+  function setIgLinks(handle, desktopUrl) {
+    $$('a[data-ig-dm]').forEach(function (a) {
+      if (IS_MOBILE) { a.href = igDmUrl(handle); a.removeAttribute('target'); }
+      else if (desktopUrl) a.href = desktopUrl;
+    });
+  }
   function initContacts() {
+    setIgLinks();
     Promise.all([loadJSON('data/contact.json'), loadJSON('data/cta-links.json')]).then(function (r) {
       var c = r[0] || {}, l = r[1] || {};
       var phoneRe = /0\d{2} \d{3} \d{3,4}/;
@@ -103,7 +114,7 @@
         if (intl) a.href = 'https://wa.me/' + intl;
         if (c.telefon) swapText(a, phoneRe, c.telefon);
       });
-      if (l.instagram_dm) $$('a[data-ig-dm]').forEach(function (a) { a.href = l.instagram_dm; });
+      setIgLinks(c.instagram_handle, l.instagram_dm);
       if (c.instagram_link) $$('a.f-link[href^="https://www.instagram.com/"], a.soc-a[href^="https://www.instagram.com/"]').forEach(function (a) {
         if (a.hasAttribute('data-ig-dm')) return;
         a.href = c.instagram_link;
@@ -462,7 +473,7 @@
     var daysEl = $('#days'), monthEl = $('#month'), monthBtn = $('#month-btn'), weeklyBtn = $('#weekly'), bar = $('#pickbar');
     var st = { pick: null, hala: null, weekly: false, month: false, mon: 0, calDay: null };
     var hours = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'], busy = {}, halls = ['Altina', 'SC7', 'Stracatella', 'Crveno Crno'];
-    var waBase = 'https://wa.me/38161324423', igDm = 'https://www.instagram.com/fieldcam_x/';
+    var waBase = 'https://wa.me/38161324423', igDm = IS_MOBILE ? igDmUrl() : 'https://www.instagram.com/fieldcam_x/';
     var DAY = 24 * 3600 * 1000;
     var chipStyle = function (on) { return "display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 999px; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 17px; cursor: pointer; " + (on ? 'background: #D7FF00; color: #0F2620; border: 2px solid #D7FF00;' : 'background: transparent; color: #F5F7F3; border: 2px solid #5E8F7F;'); };
     var today = function () { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); };
@@ -573,7 +584,7 @@
         html += '<p style="margin: 0 0 12px; padding: 12px 14px; border-radius: 12px; border: 1px dashed #FFB347; color: #FFB347; font-weight: 600">Prvo izaberi halu. <a href="#korak-1" style="color: #FFB347">Idi na korak 1</a></p>' + reset('Poništi izbor termina');
       } else {
         html += '<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">' +
-          '<a class="btn-p" id="ig-send" href="' + esc(igDm) + '" target="_blank" rel="noopener" style="background: #D7FF00; color: #0F2620; border: 2px solid #D7FF00; font-family: \'Baloo 2\', sans-serif; font-weight: 700; font-size: 17px; padding: 11px 24px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; cursor: pointer">Kopiraj poruku i otvori Instagram</a>' +
+          '<a class="btn-p" id="ig-send" href="' + esc(igDm) + '"' + (IS_MOBILE ? '' : ' target="_blank" rel="noopener"') + ' style="background: #D7FF00; color: #0F2620; border: 2px solid #D7FF00; font-family: \'Baloo 2\', sans-serif; font-weight: 700; font-size: 17px; padding: 11px 24px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; cursor: pointer">Kopiraj poruku i otvori Instagram</a>' +
           '<a class="btn-s" id="wa-send" href="' + esc(waBase + '?text=' + encodeURIComponent(msg)) + '" target="_blank" rel="noopener" style="border: 2px solid #D7FF00; color: #D7FF00; background: transparent; font-family: \'Baloo 2\', sans-serif; font-weight: 700; font-size: 16px; padding: 9px 22px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; cursor: pointer">WhatsApp</a>' +
           reset('Poništi') + '</div>';
       }
@@ -618,9 +629,12 @@
           t.textContent = 'Kopiranje nije uspelo, prepiši poruku iznad';
           t.focus();
         };
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(msg).then(function () { done(true); }, function () { done(fallback()); });
-        } else done(fallback());
+        // Prvo sinhrono kopiranje: radi i kad stranica odmah prelazi na Instagram (telefon).
+        var ok = fallback();
+        if (ok) done(true);
+        else if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(msg).then(function () { done(true); }, function () { done(false); });
+        } else { e.preventDefault(); done(false); }
       }
     });
     weeklyBtn.addEventListener('click', function () {
@@ -656,7 +670,8 @@
       }
       var intl = phoneIntl(r[3] && r[3].telefon);
       if (intl) waBase = 'https://wa.me/' + intl;
-      if (r[2] && r[2].instagram_dm) igDm = r[2].instagram_dm;
+      if (IS_MOBILE) igDm = igDmUrl(r[3] && r[3].instagram_handle);
+      else if (r[2] && r[2].instagram_dm) igDm = r[2].instagram_dm;
       renderAll();
     });
   }
