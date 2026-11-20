@@ -87,6 +87,7 @@
     var mq = null, pv = false;
     try { mq = window.matchMedia('(max-width: 760px) and (orientation: portrait)'); pv = mq.matches; } catch (e) {}
 
+    var revealed = false;
     function apply(T) {
       var v = heroVals(T, pv);
       var fill = function (tpl) { return tpl.replace(/\{\{(\w+)\}\}/g, function (m, k) { return v[k]; }); };
@@ -95,6 +96,7 @@
         for (var j = 0; j < n.attrs.length; j++) n.el.setAttribute(n.attrs[j].name, fill(n.attrs[j].tpl));
       }
       for (var k = 0; k < txt.length; k++) txt[k].textContent = v[txt[k].getAttribute('data-txt')];
+      if (!revealed) { revealed = true; document.documentElement.classList.remove('fx-intro'); }
     }
 
     var raf = null, t0 = null, running = false;

@@ -10,7 +10,7 @@ publish_mode: simple
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-locale: "sr"
+locale: "hr"  # Decap nema srpski u latinici; hrvatski je najbliži
 
 collections:
   - name: "hero"
@@ -38,19 +38,21 @@ collections:
             label_singular: "Termin"
             summary: "{{fields.balon}} — {{fields.tim1}} vs {{fields.tim2}} ({{fields.datum}})"
             fields:
-              - { label: "Balon / hala (mora se poklapati sa nazivom iz 'Lista hala' ispod)", name: "balon", widget: "string" }
+              - { label: "Balon / hala", name: "balon", widget: "string", hint: "Upiši tačno kao u 'Lista hala' (npr. Altina, SC7, Stracatella, Crveno Crno). Za turnire i ostale hale upiši: Ostalo" }
               - { label: "Datum", name: "datum", widget: "datetime", format: "YYYY-MM-DD", date_format: true, time_format: false, picker_utc: true }
-              - { label: "Vreme (opciono, npr. '20:00')", name: "vreme", widget: "string", required: false }
+              - { label: "Vreme (opciono, npr. '20:00')", name: "vreme", widget: "string", required: false, pattern: ['^([01]?[0-9]|2[0-3])[:.][0-5][0-9]$', "Upiši vreme kao 20:00"] }
               - { label: "Tim 1", name: "tim1", widget: "string" }
               - { label: "Tim 2", name: "tim2", widget: "string" }
               - { label: "Naslov (opciono, override umesto 'Tim 1 – Tim 2')", name: "naslov", widget: "string", required: false }
-              - { label: "YouTube ID snimka (nelistiran/unlisted video — samo ID, npr. 'dQw4w9WgXcQ')", name: "youtube_id", widget: "string" }
+              - { label: "YouTube snimak", name: "youtube_id", widget: "string", hint: "Nalepi link snimka sa YouTube-a ili samo ID (11 znakova posle v= u linku)" }
               - { label: "YouTube link (opciono, ako se razlikuje od standardnog youtu.be/ID)", name: "youtube_link", widget: "string", required: false }
-              - label: "Golovi (opciono): minut svakog gola u snimku, format mm:ss, npr. '41:05'"
+              - label: "Golovi (opciono)"
                 name: "golovi"
                 widget: "list"
                 required: false
                 label_singular: "Gol"
+                hint: "Minut svakog gola u snimku. Na sajtu se pojavljuju kao dugmići koji puštaju snimak od tog trenutka."
+                field: { label: "Minut gola (mm:ss, npr. 41:05)", name: "minut", widget: "string", pattern: ['^[0-9]{1,3}:[0-5][0-9]$', "Upiši kao 41:05"] }
 
   - name: "kalendar"
     label: "Kalendar termina (Zakazivanje)"
@@ -82,12 +84,12 @@ collections:
         label: "Kontakt podaci"
         name: "contact"
         fields:
-          - { label: "Telefon", name: "telefon", widget: "string", required: false }
+          - { label: "Telefon", name: "telefon", widget: "string", required: false, hint: "Npr. 061 324 423. Iz ovog broja se prave i linkovi za poziv i za WhatsApp." }
           - { label: "Email", name: "email", widget: "string", required: false }
-          - { label: "Instagram handle (prikaz, npr. @fieldcam_x)", name: "instagram_handle", widget: "string" }
+          - { label: "Instagram nalog (prikaz, npr. @fieldcam_x)", name: "instagram_handle", widget: "string" }
           - { label: "Instagram link", name: "instagram_link", widget: "string" }
           - { label: "YouTube link", name: "youtube_link", widget: "string", required: false }
-          - { label: "Radno vreme (opciono)", name: "radno_vreme", widget: "string", required: false }
+          - { label: "Radno vreme (opciono)", name: "radno_vreme", widget: "string", required: false, hint: "Malim slovom, jer stoji usred rečenice. Npr. svakog dana od 10 do 22h" }
 
   - name: "hale"
     label: "Lista hala / lokacija"
@@ -112,6 +114,5 @@ collections:
         label: "CTA linkovi"
         name: "cta-links"
         fields:
-          - { label: "Instagram DM link", name: "instagram_dm", widget: "string", required: false }
-          - { label: "WhatsApp link", name: "whatsapp", widget: "string", required: false }
-          - { label: "Telefon link (format: tel:+381...)", name: "telefon", widget: "string", required: false }
+          - { label: "Instagram DM link", name: "instagram_dm", widget: "string", required: false, hint: "Link koji otvara poruke na Instagramu, npr. https://ig.me/m/fieldcam_x. Telefon i WhatsApp se menjaju u 'Kontakt podaci'." }
+

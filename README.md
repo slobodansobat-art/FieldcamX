@@ -1,112 +1,24 @@
-# FieldCamX — statički sajt
+# FieldCamX sajt
 
-Mobile-first, 4-stranični statički sajt za brend **FieldCamX** — snimanje amaterskih utakmica malog fudbala fiksnim kamerama u halama, distribucija highlight-ova na Instagramu. Slogan: **"MI SNIMAMO SVE"**.
+Sajt za FieldCamX: snimanje utakmica malog fudbala u halama u Beogradu.
+Adresa: https://fieldcamx.netlify.app · Instagram @fieldcam_x · YouTube @FieldCam_X
 
-Implementacija prati dizajn specifikaciju iz Faze 1 (paleta boja, tipografija, struktura sekcija, komponente).
+## Kako je napravljen
+- Običan HTML, CSS i JavaScript, bez build koraka. Netlify objavljuje sve što je na grani `main`.
+- `index.html`, `arhiva.html`, `usluga.html`, `zakazivanje.html`: stranice.
+- `css/style.css`: stilovi (deo stilova je direktno u HTML-u, po odobrenom dizajnu).
+- `js/hero.js`: uvodna animacija na početnoj ("pogled iz kamere").
+- `js/main.js`: meni, plejer, arhiva, zakazivanje; čita podatke iz `data/*.json`.
 
----
+## Uređivanje sadržaja (bez programiranja)
+Otvori https://fieldcamx.netlify.app/admin/ i prijavi se. Svaka izmena se čuva na GitHub i sajt se sam osveži za minut-dva.
 
-## Struktura sajta (4 stranice)
+- **Arhiva termina**: novi snimak = nova stavka. Hala se upisuje tačno kao u "Lista hala" (za turnire: `Ostalo`). Za YouTube snimak može ceo link. Polje "Golovi" (npr. `41:05`) pravi dugmiće u plejeru.
+- **Kalendar termina**: upiši samo dane kada je nešto zauzeto. Sve ostalo se na sajtu vidi kao slobodno. Termini bliži od 24 sata se sami zaključavaju.
+- **Kontakt podaci**: telefon (iz njega se prave i link za poziv i WhatsApp), mejl, Instagram, YouTube, radno vreme.
+- **Lista hala**: hale u zakazivanju i na listi "Hale u kojima snimamo". Redosled određuje i oznake CAM 01, CAM 02...
+- **Hero sekcija**: naslov, podnaslov i dugme na početnoj.
 
-- **Početna** (`index.html`) — hero, kratak "Kako radi" pregled, teaser poslednja 3 snimljena termina (klikabilni, plejer se otvara na sajtu), finalni CTA ka Zakazivanju/Usluzi. Cilj: za 3 sekunde jasno čime se FieldCamX bavi i kako postati korisnik.
-- **Arhiva snimaka** (`arhiva.html`) — svi termini grupisani po hali (balonu): najnoviji izdvojen kao veća kartica, ostali u bočnoj listi. Klik na bilo koju karticu otvara YouTube plejer u lightbox-u preko cele stranice.
-- **Usluga** (`usluga.html`) — procedura korak-po-korak (poziv → snimanje 4K/360° → montaža za 48h → YouTube/Instagram) uz ilustracije u stilu sajta, plus "Za koga je" (hale/škole, amaterske ekipe, turniri). Ilustracije uz korake su generisane grafike (SVG, u paleti sajta) — placeholder umesto pravih fotografija, jer preuzimanje sa stock foto sajtova nije bilo moguće iz ovog razvojnog okruženja; po želji zameniti pravim fotografijama.
-- **Zakazivanje** (`zakazivanje.html`) — kalendar slobodnih/zauzetih termina (naredna 3 dana + mesečna mreža kao dodatna opcija), CTA dugmad, Instagram/telefon/email, lista hala gde se snima.
-
-Sve 4 stranice dele isti header/footer i učitavaju sadržaj iz istih `/data/*.json` fajlova (CMS-editabilno).
-
-## Struktura fajlova
-
-```
-fieldcamx-site/
-├── index.html              # Početna
-├── arhiva.html              # Arhiva snimaka
-├── usluga.html               # Usluga
-├── zakazivanje.html           # Zakazivanje (kalendar termina + kontakt)
-├── css/
-│   └── style.css           # Sav CSS (custom properties za paletu boja, mobile-first)
-├── js/
-│   └── main.js             # Vanilla JS — učitava /data/*.json i renderuje sadržaj (radi na svim stranicama, po potrebi)
-├── data/                    # Sadržaj koji vlasnik menja preko CMS-a (ili ručno)
-│   ├── hero.json            # Naslov, podnaslov, tekst/link CTA dugmeta u hero sekciji
-│   ├── matches.json          # Arhiva termina: balon, datum, vreme, timovi, YouTube ID snimka
-│   ├── kalendar.json         # Kalendar termina: fiksni sati u danu + zauzeti termini po datumu (Zakazivanje)
-│   ├── contact.json          # Telefon, email, Instagram handle, radno vreme
-│   ├── venues.json           # Lista hala/lokacija gde se snima
-│   └── cta-links.json        # Instagram DM / WhatsApp / telefon linkovi za CTA dugmad
-├── images/
-│   ├── hero-bg.jpg               # Hero pozadinska fotografija (privremeni stock kadar)
-│   ├── og-image.png              # Slika za deljenje linka (Open Graph)
-│   ├── logo-full.png              # Ceo logo (ikonica + natpis "FieldCamX"), izvučen iz pravog logo fajla — koristi se u header-u i footer-u
-│   ├── logo-icon.png             # Samo ikonica loga (kamera + teren), bez natpisa — trenutno se ne koristi na sajtu, ostavljena kao rezervni asset
-│   ├── favicon.png                # Favicon/app-icon (zaobljeni kvadrat, samo ikonica), generisan iz logo fajla
-│   └── uploads/                  # Prazan folder — odavde Decap CMS servira nove slike
-├── admin/
-│   ├── index.html            # Decap CMS učitavač (standardni boilerplate)
-│   └── config.yml            # Definicija kolekcija/polja za CMS (git-gateway backend)
-├── sitemap.xml
-├── robots.txt
-└── README.md
-```
-
-Logo je pravi FieldCamX logo koji je vlasnik poslao — ceo lockup (ikonica + natpis "FieldCamX" u originalnom fontu/boji koji je dizajner napisao) je izvučen i očišćen (providna pozadina) u `images/logo-full.png` i koristi se kao jedinstvena slika u header-u i footer-u na sve 4 stranice. `images/favicon.png` je generisan iz same ikonice (bez teksta, jer je favikona premala za čitljiv natpis) u app-icon stilu (zaobljeni kvadrat, tamnozelena pozadina) za favicon i apple-touch-icon. Napomena: izvorni fajl koji je vlasnik poslao je relativno mala rezolucija (296×176px), što je sasvim dovoljno za sadašnju upotrebu (header/footer/favicon), ali ako logo ikada treba da se prikaže veći (npr. na promo materijalu), bilo bi dobro tražiti od vlasnika logo u većoj rezoluciji ili vektorskom (SVG) formatu.
-
----
-
-## Kako lokalno pogledati sajt
-
-Sadržaj se učitava preko `fetch()` iz `/data/*.json`, što **ne radi** ako se `index.html` otvori direktno dvoklikom (`file://...`) zbog CORS ograničenja browsera. Zato je potreban lokalni HTTP server:
-
-```bash
-cd fieldcamx-site
-python3 -m http.server 8000
-```
-
-Zatim otvoriti `http://localhost:8000/` u browseru.
-
-CMS admin panel na lokalu (bez pravog login-a, samo za pregled interfejsa) je na `http://localhost:8000/admin/`. Pravi login radi samo na živom sajtu (`https://fieldcamx.netlify.app/admin/`), jer zahteva Netlify Identity + Git Gateway.
-
----
-
-## Deploy i hosting
-
-- **Netlify projekat:** `fieldcamx` (tim **Fieldcamx**, nalog `dropmytoy@gmail.com`) — https://fieldcamx.netlify.app/
-- **Git repo:** https://github.com/slobodansobat-art/FieldcamX (grana `main`) — vlasnik repo-a je nalog `slobodansobat-art`, dok je Netlify projekat na drugom (`dropmytoy`) nalogu; to je normalno, Netlify se autorizovao ka GitHub-u preko sopstvenog OAuth toka nezavisno od toga ko je ulogovan na Netlify.
-- **Continuous deployment:** aktivan — svaki `git push` na `main` automatski pokreće novi deploy na Netlify-ju (nema build koraka, čist statički sajt, publish directory je koren repoa).
-- Da bi se sadržaj sajta menjao ubuduće: napraviti izmenu lokalno → `git add` / `git commit` / `git push origin main` → Netlify sam deploy-uje za par desetina sekundi. Stariji način (ručni upload zip-a preko "Netlify Drop") više nije potreban.
-
----
-
-## CMS (Decap CMS)
-
-- Backend: `git-gateway` (standardni Decap + Netlify setup) — definisan u `admin/config.yml`.
-- Kolekcije mapirane 1:1 na `data/*.json` fajlove: **Hero sekcija**, **Arhiva termina (snimci)**, **Kalendar termina (Zakazivanje)**, **Kontakt podaci**, **Lista hala/lokacija**, **CTA linkovi**.
-- Slike koje vlasnik otpremi preko CMS-a idu u `images/uploads/`.
-- ✅ **Netlify Identity + Git Gateway su omogućeni i testirani** na živom sajtu (`https://fieldcamx.netlify.app/admin/`) — login formular se ispravno učitava.
-- Vlasnik (`slobodansobat@gmail.com`) je pozvan kao prvi CMS korisnik — treba da proveri email za invite link, podesi lozinku, i onda se loguje na `/admin/` da menja sadržaj bez pomoći programera.
-
----
-
-## Placeholder podaci koje vlasnik treba da zameni pre lansiranja
-
-1. **Instagram handle** — ✅ urađeno, pravi handle `@fieldcam_x` postavljen svuda (`data/contact.json`, `data/cta-links.json`, linkovi u celom sajtu).
-2. **Logo** — ✅ urađeno, pravi logo je postavljen (`images/logo-full.png` u header-u/footer-u, `images/favicon.png` za favikonu). Opciono: zameniti verzijom u većoj rezoluciji ili vektorskom (SVG) formatu ako vlasnik ima takav fajl, radi oštrijeg prikaza na većim formatima u budućnosti.
-3. **Hero pozadinska slika** — `images/hero-bg.jpg` je trenutno **besplatna stock fotografija** (Pexels licenca, autor Tima Miroshnichenko, izvor: pexels.com/photo/6077792) balon-hale za mali fudbal — koristi se privremeno jer FieldCamX nema još sopstvenu fotografiju u visokoj rezoluciji. Treba zameniti pravim FieldCamX kadrom kad stigne (i osvežiti `images/og-image.png`, koji je generisan iz iste stock fotografije, za deljenje linka na društvenim mrežama).
-4. **Ilustracije procedure na Usluga stranici** (`usluga.html`, sekcija "Kako radi") — 4 generisane SVG grafike (kamera/HUD stil, u paleti sajta) umesto pravih fotografija, jer stock foto sajtovi nisu bili dostupni iz razvojnog okruženja. Po želji zameniti promo fotografijama snimanja (ne fotografijama unutrašnjosti balona/hale).
-5. **Arhiva termina** (`data/matches.json`) — ⚠️ **VAŽNO:** svih 9 primer-stavki trenutno koristi isti placeholder YouTube ID (`dQw4w9WgXcQ`, javno dostupan test video) samo da bi se video mehanizam radio. Pre lansiranja treba:
-   - snimke okačiti na YouTube kao **nelistirane (unlisted)** video zapise,
-   - u svakoj stavci zameniti `youtube_id` pravim ID-jem tog snimka,
-   - polje `balon` mora tačno da se poklapa sa nazivom hale iz `data/venues.json` (inače će se termin prikazati kao posebna, neočekivana grupa),
-   - proveriti tačne datume/vremena i imena timova.
-6. **Kalendar termina** (`data/kalendar.json`) — ⚠️ **VAŽNO:** `dani` trenutno sadrži izmišljene primer-datume (uklj. par u prošlosti) samo radi prikaza svih stanja kalendara. Pre lansiranja vlasnik treba da unese stvarne zauzete termine (i briše/dodaje dane kako se budu rezervisali). Polje `sati` je fiksni dnevni raspored (isti svaki dan) — po potrebi promeniti vremena, ali onda i u svakom unosu `zauzeti` koristiti tačno ista vremena.
-7. **Kontakt podaci** (`data/contact.json`) — telefon, email i radno vreme su placeholder vrednosti — treba potvrditi prave podatke i kanal za CTA (Instagram DM, WhatsApp ili telefon).
-8. **CTA linkovi** (`data/cta-links.json`) — Instagram DM link, WhatsApp link i telefon link su u placeholder formatu — treba zameniti pravim brojem/handle-om.
-9. **Lista hala/lokacija** (`data/venues.json`) — 3 generičke placeholder stavke ("Naša prva/druga/treća hala") — treba zameniti tačnim nazivima i adresama hala gde se snima. Ovi nazivi moraju da se poklapaju sa poljem `balon` u `data/matches.json`.
-10. **Cene i paketi snimanja** — ne postoje na sajtu jer podaci nisu dostupni (nije bilo definisano u dizajn specifikaciji) — dodati naknadno ako vlasnik želi.
-11. **Domen** — `sitemap.xml`, `robots.txt` i Open Graph meta tagovi u `index.html` trenutno koriste `https://fieldcamx.rs/` kao pretpostavljeni domen — zameniti stvarnim domenom pre lansiranja.
-
----
-
-## Napomena
-
-Ovo je čist statički sajt (HTML + CSS + vanilla JS), bez build alata — radi direktno kao statički hosting na Netlify. Decap CMS je integrisan od početka (konfiguracija u `/admin`), ali deploy (Netlify Identity, Git Gateway, DNS) je sledeća faza i nije deo ovog koraka.
+## Napomene
+- Pozivnice za /admin/ stižu mejlom (Netlify Identity). Link iz mejla otvara sajt, koji zatim vodi na /admin/.
+- Snimci starog sajta (pre redizajna) su na grani `stari-sajt-snimci`.

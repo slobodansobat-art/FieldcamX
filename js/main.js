@@ -12,6 +12,7 @@
     });
   };
   var pad = function (n) { return String(n).padStart(2, '0'); };
+  var cssEsc = function (s) { return window.CSS && CSS.escape ? CSS.escape(s) : String(s).replace(/["\\]/g, '\\$&'); };
 
   var cache = {};
   function loadJSON(path) {
@@ -74,20 +75,40 @@
   }
 
   /* ================= kontakt podaci iz CMS-a ================= */
+  // Broj telefona se upisuje jednom (contact.json), a linkovi za poziv i WhatsApp se prave iz njega.
+  function phoneIntl(t) {
+    var d = String(t || '').replace(/\D/g, '');
+    if (!d) return '';
+    if (d.indexOf('00') === 0) d = d.slice(2);
+    else if (d.charAt(0) === '0') d = '381' + d.slice(1);
+    return d;
+  }
   function initContacts() {
     Promise.all([loadJSON('data/contact.json'), loadJSON('data/cta-links.json')]).then(function (r) {
       var c = r[0] || {}, l = r[1] || {};
       var phoneRe = /0\d{2} \d{3} \d{3,4}/;
+      var intl = phoneIntl(c.telefon);
       $$('a[href^="tel:"]').forEach(function (a) {
-        if (l.telefon) a.href = l.telefon;
+        if (intl) a.href = 'tel:+' + intl;
         if (c.telefon) a.textContent = a.textContent.replace(phoneRe, c.telefon);
       });
       $$('a[href^="https://wa.me/"]').forEach(function (a) {
         if (a.id === 'wa-send') return;
-        if (l.whatsapp) a.href = l.whatsapp;
+        if (intl) a.href = 'https://wa.me/' + intl;
         if (c.telefon) a.textContent = a.textContent.replace(phoneRe, c.telefon);
       });
       if (l.instagram_dm) $$('a[href^="https://ig.me/"]').forEach(function (a) { a.href = l.instagram_dm; });
+      if (c.instagram_link) $$('a.f-link[href^="https://www.instagram.com/"]').forEach(function (a) {
+        a.href = c.instagram_link;
+        if (c.instagram_handle) a.textContent = a.textContent.replace(/@[\w.]+/, c.instagram_handle);
+      });
+      if (c.youtube_link) $$('a.f-link[href^="https://www.youtube.com/@"]').forEach(function (a) {
+        if (a.id === 'pl-yt') return;
+        a.href = c.youtube_link;
+        var h = (c.youtube_link.match(/@[\w.-]+/) || [])[0];
+        if (h) a.textContent = a.textContent.replace(/@[\w.-]+/, h);
+      });
+      if (c.radno_vreme) $$('[data-c="radno_vreme"]').forEach(function (el) { el.textContent = c.radno_vreme; });
       if (c.email) $$('a[href^="mailto:"]').forEach(function (a) {
         var old = a.getAttribute('href').slice(7);
         a.href = 'mailto:' + c.email;
@@ -98,6 +119,11 @@
 
   /* ================= snimci (data/matches.json) ================= */
   var HALL_ORDER = null;
+  // "9:00" -> "09:00", da se vremena ispravno sortiraju i porede
+  function normTime(t) {
+    var m = String(t || '').trim().match(/^(\d{1,2})[:.](\d{2})/);
+    return m ? pad(+m[1]) + ':' + m[2] : '';
+  }
   function loadMatches() {
     return Promise.all([loadJSON('data/matches.json'), loadJSON('data/venues.json')]).then(function (r) {
       var raw = (r[0] && r[0].stavke) || [];
@@ -105,17 +131,20 @@
       var seen = {}, list = [];
       raw.forEach(function (x) {
         var d = parseDay(x.datum);
-        if (!d || !x.youtube_id || seen[x.youtube_id]) return;
-        seen[x.youtube_id] = true;
+        var yid = String(x.youtube_id || '').trim();
+        var mm = yid.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([A-Za-z0-9_-]{11})/);
+        if (mm) yid = mm[1];
+        if (!d || !yid || seen[yid]) return;
+        seen[yid] = true;
         var gen = /^(doma[cć]i|gosti)$/i;
         var teams = x.tim1 && x.tim2 && !(gen.test(x.tim1) && gen.test(x.tim2)) ? x.tim1 + ' – ' + x.tim2 : '';
         list.push({
           hala: x.balon || 'Ostalo',
           d: d,
-          vreme: x.vreme || '',
+          vreme: normTime(x.vreme),
           naslov: x.naslov || teams,
-          yid: x.youtube_id,
-          link: x.youtube_link || 'https://www.youtube.com/watch?v=' + x.youtube_id,
+          yid: yid,
+          link: x.youtube_link || 'https://www.youtube.com/watch?v=' + yid,
           golovi: (x.golovi || []).map(function (g) { return typeof g === 'string' ? g : (g && (g.minut || g.vreme)) || ''; }).filter(Boolean)
         });
       });
@@ -190,7 +219,7 @@
     $('#pl-goals', box).addEventListener('click', function (e) {
       var b = e.target.closest('[data-goal]'); if (!b) return;
       seek = b.getAttribute('data-goal'); renderGoals(); start(toSec(seek));
-      var nb = $('[data-goal="' + seek + '"]', box); if (nb) nb.focus();
+      var nb = $('[data-goal="' + cssEsc(seek) + '"]', box); if (nb) nb.focus();
     });
     box.addEventListener('click', function (e) { if (e.target === box) close(); });
     box.addEventListener('keydown', function (e) { trapFocus(box, e); });
@@ -212,6 +241,7 @@
     loadJSON('data/hero.json').then(function (h) {
       if (!h) return;
       $$('[data-hero]').forEach(function (el) { var v = h[el.getAttribute('data-hero')]; if (v) el.textContent = v; });
+      $$('[data-hero-cta]').forEach(function (a) { if (h.cta_tekst) a.textContent = h.cta_tekst; if (h.cta_link) a.href = h.cta_link; });
     });
 
     // traka: pauza / pokreni
@@ -308,7 +338,7 @@
 
       var want = new URLSearchParams(location.search).get('hala');
       var st = { hala: order[0], fDay: 'all', fTime: 'all', limit: 6, flip: false };
-      order.forEach(function (h) { if (want && slug(h) === want) st.hala = h; });
+      order.forEach(function (h) { if (want && slug(h) === slug(want)) st.hala = h; });
 
       var row = function (m) {
         return { d: cap(WD[m.d.getDay()]) + ', ' + m.d.getDate() + '. ' + MN[m.d.getMonth()] + yearSfx(m.d),
@@ -385,7 +415,7 @@
         st = { hala: n, fDay: 'all', fTime: 'all', limit: 6, flip: !st.flip };
         try { history.replaceState(null, '', '?hala=' + slug(n)); } catch (er) {}
         renderAll();
-        var nb = $('[data-hala="' + n.replace(/"/g, '\\"') + '"]', chipsEl); if (nb) nb.focus();
+        var nb = $('[data-hala="' + cssEsc(n) + '"]', chipsEl); if (nb) nb.focus();
       });
       right.addEventListener('change', function (e) {
         if (e.target.id === 'a-day') { st.fDay = e.target.value; st.limit = 6; renderRight('#a-day'); }
@@ -437,18 +467,18 @@
       var isB = dayBusy(d).indexOf(h) !== -1;
       var late = !isB && at(d, h).getTime() - Date.now() < DAY;
       if (isB || late) {
-        return '<li><span style="width: 100%; min-height: 52px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: 6px 12px; border-radius: 12px; border: 1px solid #1E3D35; color: #93AAA0"><span style="font-weight: 700; text-decoration: line-through">' + h + '</span><span style="font-size: 12px">' + (late ? 'manje od 24h' : 'zauzeto') + '</span></span></li>';
+        return '<li><span style="width: 100%; min-height: 52px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: 6px 12px; border-radius: 12px; border: 1px solid #1E3D35; color: #93AAA0"><span style="font-weight: 700; text-decoration: line-through">' + esc(h) + '</span><span style="font-size: 12px">' + (late ? 'manje od 24h' : 'zauzeto') + '</span></span></li>';
       }
       var on = !!(st.pick && st.pick.key === key);
-      return '<li><button type="button" class="slot" role="radio" data-slot="' + key + '" aria-checked="' + on + '" style="width: 100%; min-height: 52px; box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 6px 12px; border-radius: 12px; cursor: pointer; font-family: Manrope, sans-serif; font-size: 16px; text-align: left; ' +
-        (on ? 'background: #D7FF00; color: #0F2620; border: 2px solid #D7FF00;' : 'background: transparent; color: #F5F7F3; border: 2px solid #5E8F7F;') + '"><span style="font-weight: 700">' + h + '</span><span style="font-size: 12px; font-weight: 600; ' + (on ? 'color: #0F2620;' : 'color: #D7FF00;') + '">' + (on ? 'izabrano' : 'slobodno') + '</span></button></li>';
+      return '<li><button type="button" class="slot" data-slot="' + esc(key) + '" aria-pressed="' + on + '" style="width: 100%; min-height: 52px; box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 6px 12px; border-radius: 12px; cursor: pointer; font-family: Manrope, sans-serif; font-size: 16px; text-align: left; ' +
+        (on ? 'background: #D7FF00; color: #0F2620; border: 2px solid #D7FF00;' : 'background: transparent; color: #F5F7F3; border: 2px solid #5E8F7F;') + '"><span style="font-weight: 700">' + esc(h) + '</span><span style="font-size: 12px; font-weight: 600; ' + (on ? 'color: #0F2620;' : 'color: #D7FF00;') + '">' + (on ? 'izabrano' : 'slobodno') + '</span></button></li>';
     }
     var fullDay = function (d) { var b = dayBusy(d); return hours.every(function (h) { return b.indexOf(h) !== -1 || at(d, h).getTime() - Date.now() < DAY; }); };
 
     function renderHalls() {
       hallsEl.innerHTML = halls.concat(['Druga hala']).map(function (n) {
         var on = st.hala === n;
-        return '<button type="button" class="chip" role="radio" data-hall="' + esc(n) + '" aria-checked="' + on + '" style="' + chipStyle(on) + '">' + esc(n) + '</button>';
+        return '<button type="button" class="chip" data-hall="' + esc(n) + '" aria-pressed="' + on + '" style="' + chipStyle(on) + '">' + esc(n) + '</button>';
       }).join('');
     }
     function renderDays() {
@@ -478,7 +508,8 @@
       for (var n = 1; n <= nDays; n++) {
         var d = new Date(yy, mm, n), b = dayBusy(d);
         var past = d < t, isToday = d.getTime() === t.getTime();
-        var stt = b.length === 0 ? 'f' : b.length >= hours.length ? 'b' : 'p';
+        var nBusy = hours.filter(function (h) { return b.indexOf(h) !== -1 || at(d, h).getTime() - Date.now() < DAY; }).length;
+        var stt = nBusy === 0 ? 'f' : nBusy >= hours.length ? 'b' : 'p';
         var bookable = !past && !isToday && stt !== 'b';
         var sel = st.calDay === iso(d);
         var sr = ', ' + WD[d.getDay()] + ' ' + n + '. ' + MN[mm] + (past ? ', prošlo' : isToday ? ', danas' : stt === 'f' ? ', slobodno ceo dan' : stt === 'p' ? ', ima slobodnih termina' : ', zauzeto');
@@ -496,7 +527,7 @@
         var cd = parseDay(st.calDay);
         var ct = 'Slobodni termini, ' + WD[cd.getDay()] + ' ' + cd.getDate() + '. ' + MN[cd.getMonth()];
         calHtml = '<div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid #24463C"><h4 style="margin: 0 0 12px; font-family: \'Baloo 2\', sans-serif; font-weight: 700; font-size: 19px">' + ct + '</h4>' +
-          '<ul role="radiogroup" aria-label="' + ct + '" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px">' + hours.map(function (h) { return slot(cd, h); }).join('') + '</ul></div>';
+          '<ul aria-label="' + ct + '" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px">' + hours.map(function (h) { return slot(cd, h); }).join('') + '</ul></div>';
       }
       monthEl.innerHTML = '<div class="pop cal-box" style="margin-top: 20px; background: #12302A; border: 1px solid #24463C; border-radius: 18px; padding: 24px; max-width: 680px">' +
         '<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px">' +
@@ -540,29 +571,43 @@
       }
       bar.innerHTML = html + '</div>';
     }
-    function renderAll(focusSel) {
+    function renderAll(focusSel, scope) {
+      var y = window.scrollY;
       renderHalls(); renderDays(); renderMonth(); renderBar();
-      if (focusSel) { var f = $(focusSel); if (f) f.focus(); }
+      if (focusSel) { var f = $(focusSel, scope || document); if (f) { f.focus({ preventScroll: true }); } }
+      if (Math.abs(window.scrollY - y) > 2) window.scrollTo(0, y);
     }
-    function pickSlot(key) {
+    function pickSlot(key, from) {
       var p = key.split(' '), d = parseDay(p[0]);
       st.pick = { key: key, dan: WD[d.getDay()], datum: d.getDate() + '. ' + MN[d.getMonth()], vreme: p[1] };
-      renderAll('[data-slot="' + key + '"]');
+      var inMonth = from && monthEl.contains(from);
+      renderAll('[data-slot="' + cssEsc(key) + '"]', inMonth ? monthEl : daysEl);
+      var live = $('#pick-live');
+      if (live) live.textContent = 'Izabrano: ' + st.pick.dan + ' ' + st.pick.datum + ' u ' + st.pick.vreme + (st.hala ? ', ' + st.hala : '. Izaberi i halu.');
     }
 
     document.addEventListener('click', function (e) {
       var t = e.target.closest('[data-hall],[data-slot],[data-day],#m-prev,#m-next,[data-clear],#ig-send');
       if (!t) return;
-      if (t.hasAttribute('data-hall')) { st.hala = t.getAttribute('data-hall'); renderAll('[data-hall="' + st.hala + '"]'); }
-      else if (t.hasAttribute('data-slot')) pickSlot(t.getAttribute('data-slot'));
+      if (t.hasAttribute('data-hall')) { st.hala = t.getAttribute('data-hall'); renderAll('[data-hall="' + cssEsc(st.hala) + '"]'); }
+      else if (t.hasAttribute('data-slot')) pickSlot(t.getAttribute('data-slot'), t);
       else if (t.hasAttribute('data-day')) { var dk = t.getAttribute('data-day'); st.calDay = st.calDay === dk ? null : dk; renderAll('[data-day="' + dk + '"]'); }
       else if (t.id === 'm-prev') { if (st.mon > 0) { st.mon--; st.calDay = null; renderAll('#m-prev'); } }
       else if (t.id === 'm-next') { if (st.mon < 1) { st.mon++; st.calDay = null; renderAll('#m-next'); } }
       else if (t.hasAttribute('data-clear')) { st.pick = null; renderAll(); var k1 = $('#days'); if (k1) k1.scrollIntoView({ block: 'nearest' }); }
       else if (t.id === 'ig-send') {
         var msg = message();
-        try { if (navigator.clipboard && msg) navigator.clipboard.writeText(msg).catch(function () {}); } catch (er) {}
-        t.textContent = 'Kopirano, otvaram Instagram';
+        var fallback = function () {
+          var ta = document.createElement('textarea');
+          ta.value = msg; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          var ok = false; try { ok = document.execCommand('copy'); } catch (er) {}
+          ta.remove(); return ok;
+        };
+        var done = function (ok) { t.textContent = ok ? 'Kopirano, otvaram Instagram' : 'Otvaram Instagram, prepiši poruku odozgo'; };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(msg).then(function () { done(true); }, function () { done(fallback()); });
+        } else done(fallback());
       }
     });
     weeklyBtn.addEventListener('click', function () {
@@ -578,14 +623,26 @@
     monthBtn.addEventListener('click', function () { st.month = !st.month; renderMonth(); });
 
     renderAll();
-    Promise.all([loadJSON('data/kalendar.json'), loadJSON('data/venues.json'), loadJSON('data/cta-links.json')]).then(function (r) {
+    Promise.all([loadJSON('data/kalendar.json'), loadJSON('data/venues.json'), loadJSON('data/cta-links.json'), loadJSON('data/contact.json')]).then(function (r) {
       var k = r[0] || {};
-      if (k.sati && k.sati.length) hours = k.sati.slice().sort();
+      if (k.sati && k.sati.length) {
+        hours = k.sati.map(normTime).filter(Boolean).filter(function (h, i, a) { return a.indexOf(h) === i; }).sort();
+        var st0 = $('#sati-txt');
+        if (st0 && hours.length) st0.textContent = 'od ' + (+hours[0].slice(0, 2)) + ' do ' + (+hours[hours.length - 1].slice(0, 2)) + 'h';
+      }
       busy = {};
-      (k.dani || []).forEach(function (d) { if (d && d.datum) busy[String(d.datum).slice(0, 10)] = (d.zauzeti || []).slice(); });
-      var v = ((r[1] && r[1].stavke) || []).map(function (x) { return x.naziv; }).filter(Boolean);
-      if (v.length) halls = v;
-      if (r[2] && r[2].whatsapp) waBase = r[2].whatsapp.split('?')[0];
+      (k.dani || []).forEach(function (d) { if (d && d.datum) busy[String(d.datum).slice(0, 10)] = (d.zauzeti || []).map(normTime); });
+      var vs = ((r[1] && r[1].stavke) || []).filter(function (x) { return x && x.naziv; });
+      if (vs.length) {
+        halls = vs.map(function (x) { return x.naziv; });
+        var hl = $('#hale-list');
+        if (hl) hl.innerHTML = vs.map(function (x) {
+          return '<li style="padding: 12px 0; border-bottom: 1px solid #24463C; display: flex; align-items: center; gap: 12px"><span style="flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; background: #D7FF00; display: block"></span><span>' + esc(x.naziv) +
+            (x.adresa ? '<span style="display: block; font-size: 14px; color: #A9BDB4">' + esc(x.adresa) + '</span>' : '') + '</span></li>';
+        }).join('');
+      }
+      var intl = phoneIntl(r[3] && r[3].telefon);
+      if (intl) waBase = 'https://wa.me/' + intl;
       if (r[2] && r[2].instagram_dm) igDm = r[2].instagram_dm;
       renderAll();
     });
